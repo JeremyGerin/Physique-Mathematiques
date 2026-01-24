@@ -1,0 +1,36 @@
+% -- Langage (français) ---
+\usepackage[french]{babel}    
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc}
+
+% --- Références & Liens ---
+\usepackage[hidelinks]{hyperref} 
+\usepackage{cleveref}
+\addto\extrasfrench{%
+  \crefname{chapter}{chapitre}{chapitres}%
+  \Crefname{chapter}{Chapitre}{Chapitres}%
+  \crefname{section}{section}{sections}%
+  \Crefname{section}{Section}{Sections}%
+  \crefname{subsection}{sous-section}{sous-sections}%
+  \Crefname{subsection}{Sous-section}{Sous-sections}%
+}
+
+% --- TOC locale ---
+\usepackage{minitoc}
+\mtcsettitle{minitoc}{Sommaire}
+\setcounter{minitocdepth}{2}
+\dominitoc 
+
+% --- Index ---
+\usepackage{imakeidx}
+\makeindex[title=Index, columns=2] 
+
+% --- Bibliographie --- 
+\usepackage{csquotes}
+\usepackage[
+  backend=biber,
+  style=alphabetic,
+  sorting=nyt
+]{biblatex}
+
+\addbibresource{bibliography/references.bib}

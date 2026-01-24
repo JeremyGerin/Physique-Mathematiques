@@ -159,6 +159,7 @@ acs-*.bib
 *.ind
 
 # minitoc
+*.mtc
 *.maf
 *.mlf
 *.mlt
@@ -294,6 +295,9 @@ TSWLatexianTemp*
 
 # xwatermark package
 *.xwm
+
+# vs code
+*.json
 
 # REVTeX puts footnotes in the bibliography by default, unless the nofootinbib
 # option is specified. Footnotes are the stored in a file with suffix Notes.bib.
