@@ -1,4 +1,3 @@
-% Théorèmes et définitions
 \newcommand{\defi}[1]{\begin{definition}#1\end{definition}}
 \newcommand{\thm}[1]{\begin{theorem}#1\end{theorem}}
 \newcommand{\lem}[1]{\begin{lemma}#1\end{lemma}}
@@ -7,3 +6,14 @@
 \newcommand{\preuve}[1]{\begin{proof}#1\end{proof}}
 \newcommand{\ex}[1]{\begin{example}#1\end{example}}
 \newcommand{\rem}[1]{\begin{remark}#1\end{remark}}
+
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\gl}{\mathfrak{gl}}
+
+\newcommand{\ilist}[1]{%
+  \begin{enumerate}[label=(\roman*), left=0pt, itemsep=2pt]
+    #1
+  \end{enumerate}%
+}
+
+\newcommand{\emphindex}[1]{\emph{#1}\index{#1}}

@@ -1,3 +1,37 @@
 \chapter{Algèbres de Lie}\label{ch_liealg}
 \minitoc
+\newpage
 
+\noindent
+Dans tout ce chapitre, soit $K$ un corps.
+
+\section{Généralités}
+\subsection{Premières définitions}
+
+\defi{
+    Une \emphindex{algèbre de Lie} $\mathfrak{g}$ est un $K$-espace vectoriel munie d'une application bilinéaire $\mathfrak{g}\times \mathfrak{g} \to \mathfrak{g}$, notée $(x,y) \mapsto [x, y]$ et appelée \emphindex{crochet de Lie}, vérifiant:
+    \ilist{
+        \item anticomutativité\footnote{si le corps est de caractéristique différente de $2$, cet axiome est équivalent à demander que $\forall x \in \mathfrak{g}, \quad [x,x] = 0$}: $\forall x, y \in \mathfrak{g}, \quad [x, y] = - [y, x]$
+        \item identité de Jacobi\index{identité de Jacobi}: $\forall x, y, z \in \mathfrak{g}, \quad [x, [y, z]] + [y, [z, x]] + [z, [x, y]] = 0$
+    }
+}
+
+\defi{
+    Un \emphindex{morphisme d'algèbres de Lie} est une application linéaire $\varphi: \mathfrak{g} \to \mathfrak{h}$ telle que 
+    $$\forall x, y \in \mathfrak{g}, \quad \varphi([x,y]) = [\varphi(x), \varphi(y)]$$
+    Un \emph{endomorphisme} est un morphisme $\mathfrak{g} \to \mathfrak{g}$. \\
+    Un \emph{isomorphisme} est un morphisme bijectif. \\
+    Un \emph{automorphisme} est un morphisme $\mathfrak{g} \to \mathfrak{g}$ bijectif.
+}
+
+\defi{
+Une \emphindex{sous-algèbre de Lie} de $\mathfrak{g}$ est un sous-espace vectoriel $\mathfrak{h} \subset \mathfrak{g}$ stable par le crochet de Lie, c'est à dire :
+$$\forall x, y \in \mathfrak{h}, \quad [x,y] \in \mathfrak{h}$$ $\mathfrak{h}$ est donc une algèbre de Lie pour le crochet de Lie induit.
+}
+
+\subsection{Exemples}
+
+
+\section{Algèbres de Lie résolubles et nilpotentes}
+
+\section{Algèbres de Lie semi-simples}
