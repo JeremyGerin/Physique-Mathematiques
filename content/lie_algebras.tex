@@ -6,7 +6,6 @@
 Dans tout ce chapitre, soit $K$ un corps.
 
 \section{Généralités}
-\subsection{Premières définitions}
 
 \defi{
     Une \emphindex{algèbre de Lie} $\mathfrak{g}$ est un $K$-espace vectoriel munie d'une application bilinéaire $\mathfrak{g}\times \mathfrak{g} \to \mathfrak{g}$, notée $(x,y) \mapsto [x, y]$ et appelée \emphindex{crochet de Lie}, vérifiant:
@@ -25,13 +24,145 @@ Dans tout ce chapitre, soit $K$ un corps.
 }
 
 \defi{
-Une \emphindex{sous-algèbre de Lie} de $\mathfrak{g}$ est un sous-espace vectoriel $\mathfrak{h} \subset \mathfrak{g}$ stable par le crochet de Lie, c'est à dire :
-$$\forall x, y \in \mathfrak{h}, \quad [x,y] \in \mathfrak{h}$$ $\mathfrak{h}$ est donc une algèbre de Lie pour le crochet de Lie induit.
+    Une \emphindex{sous-algèbre de Lie} de $\mathfrak{g}$ est un sous-espace vectoriel $\mathfrak{h} \subset \mathfrak{g}$ stable par le crochet de Lie, c'est à dire :
+    $$\forall x, y \in \mathfrak{h}, \quad [x,y] \in \mathfrak{h}$$ $\mathfrak{h}$ est donc une algèbre de Lie pour le crochet de Lie induit.
 }
 
-\subsection{Exemples}
+\defi{
+    Un \emphindex{idéal} de $\mathfrak{g}$ est un sous-espace vectoriel $I \subset \mathfrak{g}$ absorbant pour le crochet de Lie, c'est à dire :
+    $$\forall x \in \mathfrak{g}, \forall y \in I, \quad [x, y] \in I$$ 
+}
 
+\prop{
+    Soit $\varphi: \mathfrak{g} \to \mathfrak{h}$ un morphisme d'algèbres de Lie.
+    \ilist{
+        \item L'image directe $\Img(\varphi)$ est une sous-algèbre de Lie de $\mathfrak{h}$.
+        \item Le noyau $\ker(\varphi)$ est un idéal de $\mathfrak{g}$.
+    }
+}
 
-\section{Algèbres de Lie résolubles et nilpotentes}
+%TODO: preuve de cette proposition
+
+%TODO: Quotient d'une algèbre de Lie par un idéal & Théorème d'isomorphisme
+
+%TODO: Somme directe d'algèbre de Lie
+
+\subsection{Algèbres de Lie linéaires}
+
+%TODO: Algèbre de Lie des dérivations
+
+\section{Représentations d'algèbre de Lie et modules sur une algèbre de Lie}
+
+\subsection{Définitions}
+
+\defi{
+    Soit $\mathfrak{g}$ une algèbre de Lie. Une \emphindex{représentation d'algèbre de Lie} est la donnée $(V, \varphi)$ d'un $K$-espace vectoriel $V$ est d'un morphisme d'algèbres de Lie $\varphi : \mathfrak{g} \to \gl(V)$.
+}
+
+\defi{
+    Un \emphindex{module sur une algèbre de Lie} $\mathfrak{g}$ est un $K$-espace vectoriel $V$ muni d'une action linéaire de $\mathfrak{g}$ sur $V$ telle que 
+    $$x\in \mathfrak{g} \mapsto (v\mapsto x.v) \in \gl(V)$$ est un morphisme d'algèbres de Lie.
+}
+
+%TODO: somme directe, produit tensoriel, ... de représentations d'algèbre de Lie
+
+%TODO: morphisme de g-module, sous-module
+
+%TODO: lemme de Schur
+
+%TODO: theorem de Weyl
+
+%TODO: préservation de la decomposition de Jordan
+
+\subsection{Représentations de $\mathfrak{sl}(2, \C)$}
+
+\section{Algèbre de Lie nilpotentes}
+
+\subsection{Généralités}
+
+\defi{
+    La \emphindex{série centrale descendante} d'une algèbre de Lie $\mathfrak{g}$ est la suite d'idéaux de $\mathfrak{g}$ définie par :
+    $$\mathfrak{g}_0 = \mathfrak{g} \quad \text{et} \quad \mathfrak{g}_{i+1} = [\mathfrak{g}, \mathfrak{g}_i]$$
+}
+
+\defi{
+    Une \emphindex{algèbre de Lie nilpotente} est une algèbre de Lie $\mathfrak{g}$ telle que sa série centrale descendante est nulle à partir d'un certain rang. C'est à dire qu'il existe $i \in \N$ tel que $\mathfrak{g}_i = 0$.
+}
+
+%TODO: sous-algèbre, image directe, extensions d'algèbres de Lie nilpotentes sont nilpotentes
+
+\subsection{Théorème d'Engel}
+
+\thm{
+    Une algèbre de Lie $\mathfrak{g}$ est nilpotente si et seulement si 
+    $$\forall x\in \mathfrak{g}, \quad \ad x \quad \text{est nilpotent}$$ 
+}
+%TODO: preuve du thèorème d'Engel
+
+\section{Algèbres de Lie résolubles}
+
+\subsection{Généralités}
+
+\defi{
+    La \emphindex{série dérivée} d'une algèbre de Lie $\mathfrak{g}$ est la suite d'idéaux de $\mathfrak{g}$ définie par :
+    $$\mathfrak{g}^0 = \mathfrak{g} \quad \text{et} \quad \mathfrak{g}^{i+1} = [\mathfrak{g}^i, \mathfrak{g}^i]$$
+}
+
+\defi{
+    Une \emphindex{algèbre de Lie résoluble} est une algèbre de Lie $\mathfrak{g}$ telle que sa série dérivée est nulle à partir d'un certain rang. C'est à dire qu'il existe $i \in \N$ tel que $\mathfrak{g}^i = 0$.
+}
+
+%TODO: sous-algèbre, image directe, extensions d'algèbres résolubles et somme d'idéaux résolubles sont résoluble
+
+%TODO: nilpotent => résoluble
+
+%TODO: définiton du radical d'une algèbre de Lie
+
+%TODO: définition du centre d'une algèbre de Lie
+
+\subsection{Théorème de Lie}
+
+\noindent Dans cette partie on suppose que $K$ est algébriquement clos et de charactéristique nulle.
+
+\thm{
+    Soit $\mathfrak{g}$ une sous-algèbre de Lie résoluble de $\gl(V)$ où $V$ est un $K$-espace vectoriel non nul de dimension finie. Alors $V$ possède un vecteur propre commun à tous les élements de $\mathfrak{g}$
+}
+%TODO: preuve du théorème de Lie
+
+\subsection{Critère de Cartan}
+
+\thm{
+    Soit $\mathfrak{g}$ une sous-algèbre de $\gl(V)$, où $V$ est un $K$-espace vectoriel de dimension finie, telle que $\tr(xy)=0$ pour tout $x\in [\mathfrak{g}, \mathfrak{g}]$ et tout $y\in\mathfrak{g}$. Alors $\mathfrak{g}$ est résoluble.
+}
+%TODO: preuve du critère de Cartan
 
 \section{Algèbres de Lie semi-simples}
+
+\defi{
+    Une \emphindex{algèbre de Lie simple} est une algèbre de Lie $\mathfrak{g}$ qui ne possède aucun idéal autres que $0$ et elle-même.
+}
+
+\defi{
+    une \emphindex{algèbre de Lie semi-simple} est une algèbre de Lie $\mathfrak{g}$ telle que $\rad(\mathfrak{g}) = 0$.
+}
+
+\subsection{Forme de Killing}
+
+\defi{
+    Soit $\mathfrak{g}$ une algèbre de Lie. La \emphindex{forme de Killing} de $\mathfrak{g}$ est l'application $\kappa$ définie par:
+    $$\forall x, y\in \mathfrak{g}, \quad \kappa(x,y) = \tr(\ad x \ad y)$$
+}
+
+\prop{
+    Soit $\mathfrak{g}$ une algèbre de Lie. Alors $\mathfrak{g}$ est semi-simple si et seulement si sa forme de Killing est non-dégénérée.
+}
+
+%TODO: semi-simple = somme directe d'idéaux simples
+
+%TODO: semi-simple => toutes les dérivations sont interieures
+
+%TODO: decomposition de Jordan abstraite
+
+\section{Système de racines}
+
+\section{Classification des algèbres de Lie semi-simples}
