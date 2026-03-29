@@ -44,6 +44,22 @@ Dans tout ce chapitre, soit $K$ un corps.
 
 %TODO: preuve
 
+\defi{
+    Une \emphindex{algèbre de Lie abélienne} est une algèbre de Lie $\mathfrak{g}$ dont le crochet est identiquement nul :
+    $$\forall x, y \in \mathfrak{g}, \quad [x, y] = 0$$
+}
+
+\defi{
+    Le \emphindex{centre} d'une algèbre de Lie $\mathfrak{g}$ est le sous-espace vectoriel
+    $$\mathcal{Z}(\mathfrak{g}) = \{ x \in \mathfrak{g} \mid \forall y \in \mathfrak{g},\ [x, y] = 0 \}$$
+}
+
+\prop{
+    $\mathcal{Z}(\mathfrak{g})$ est un idéal abélien de $\mathfrak{g}$. C'est le plus grand idéal abélien de $\mathfrak{g}$.
+}
+
+%TODO: preuve
+
 \subsection{Algèbre de Lie quotient et théorèmes d'isomorphismes}
 
 \defi{
@@ -105,6 +121,44 @@ Dans tout ce chapitre, soit $K$ un corps.
 
 %TODO: preuve
 
+\prop{
+    La somme directe est associative à isomorphisme unique près : pour toutes algèbres de Lie $\mathfrak{g}$, $\mathfrak{h}$, $\mathfrak{k}$,
+    $$(\mathfrak{g} \oplus \mathfrak{h}) \oplus \mathfrak{k} \cong \mathfrak{g} \oplus (\mathfrak{h} \oplus \mathfrak{k})$$
+    On peut donc parler sans ambiguïté de la somme directe $\mathfrak{g}_1 \oplus \cdots \oplus \mathfrak{g}_n$ d'un nombre fini d'algèbres de Lie.
+}
+
+%TODO: preuve
+
+\subsection{Algèbre de Lie des dérivations}
+
+\defi{
+    Soit $A$ un $K$-espace vectoriel muni d'une application bilinéaire $\mu : A \times A \to A$. Une \emphindex{dérivation} de $(A, \mu)$ est une application linéaire $\delta : A \to A$ vérifiant la règle de Leibniz :
+    $$\delta(\mu(a,b)) = \mu(\delta(a), b) + \mu(a, \delta(b))$$
+    L'ensemble des dérivations de $A$ est noté $\Der(A)$. \\
+    Si $A$ est une $K$-algèbre, une dérivation de $A$ vérifie $$\delta(ab) = \delta(a)b + a\delta(b)$$
+    Si $\mathfrak{g}$ est une algèbre de Lie, une dérivation de $\mathfrak{g}$ vérifie 
+    $$\delta([x,y]) = [\delta(x), y] + [x, \delta(y)]$$
+}
+
+\prop{
+    $\Der(A)$ est une sous-algèbre de Lie de $\mathfrak{gl}(A)$.
+}
+
+%TODO: preuve
+
+\defi{
+    Soit $\mathfrak{g}$ une algèbre de Lie. Pour tout $x \in \mathfrak{g}$, la \emphindex{représentation adjointe} est le morphisme d'algèbres de Lie
+    $$\ad : \mathfrak{g} \to \mathfrak{gl}(\mathfrak{g})$$
+    défini par 
+    $$\ad(x)(y) = [x, y]$$
+}
+
+\prop{
+    Pour tout $x \in \mathfrak{g}$, $\ad x$ est une dérivation de $\mathfrak{g}$. Une telle dérivation est appelée \emphindex{dérivation intérieure}. Les dérivations intérieures forment un idéal de $\Der(\mathfrak{g})$, noté $\mathrm{Int}(\mathfrak{g})$.
+}
+
+%TODO: preuve
+
 \subsection{Algèbres de Lie linéaires}
 
 \defi{
@@ -134,7 +188,7 @@ Dans tout ce chapitre, soit $K$ un corps.
 \defi{
     L'\emphindex{algèbre de Lie unitaire} est la sous-algèbre de Lie complexe
     $$\mathfrak{u}(n) = \{ X \in \mathfrak{gl}(n, \mathbb{C}) \mid X^\dagger + X = 0 \}$$
-    où $X^\dagger = \transpose{{\overline{X}}}$ désigne le conjugué hermitien. L'\emphindex{algèbre de Lie unitaire spéciale} est
+    où $X^\dagger = \transpose{{\overline{X}}}$ désigne le conjugué hermitien. L'\emphindex{algèbre de Lie spéciale unitaire} est
     $$\mathfrak{su}(n) = \{ X \in \mathfrak{u}(n) \mid \tr(X) = 0 \}$$
 }
 
@@ -151,7 +205,16 @@ Dans tout ce chapitre, soit $K$ un corps.
     Une \emphindex{algèbre de Lie nilpotente} est une algèbre de Lie $\mathfrak{g}$ telle que sa série centrale descendante est nulle à partir d'un certain rang. C'est à dire qu'il existe $i \in \N$ tel que $\mathfrak{g}_i = 0$.
 }
 
-%TODO: sous-algèbre, image directe, extensions d'algèbres de Lie nilpotentes sont nilpotentes
+\prop{
+    Soit $\mathfrak{g}$ une algèbre de Lie nilpotente.
+    \ilist{
+        \item Toute sous-algèbre de Lie de $\mathfrak{g}$ est nilpotente.
+        \item Toute image directe de $\mathfrak{g}$ par un morphisme d'algèbres de Lie est nilpotente.
+        \item Si $I$ est un idéal nilpotent de $\mathfrak{g}$ tel que $\mathfrak{g}/I$ est nilpotente, alors $\mathfrak{g}$ est nilpotente.
+    }
+}
+
+%TODO: preuve
 
 \subsection{Théorème d'Engel}
 
@@ -159,7 +222,7 @@ Dans tout ce chapitre, soit $K$ un corps.
     Une algèbre de Lie $\mathfrak{g}$ est nilpotente si et seulement si 
     $$\forall x\in \mathfrak{g}, \quad \ad x \quad \text{est nilpotent}$$ 
 }
-%TODO: preuve du thèorème d'Engel
+%TODO: preuve
 
 \section{Algèbres de Lie résolubles}
 
@@ -174,13 +237,27 @@ Dans tout ce chapitre, soit $K$ un corps.
     Une \emphindex{algèbre de Lie résoluble} est une algèbre de Lie $\mathfrak{g}$ telle que sa série dérivée est nulle à partir d'un certain rang. C'est à dire qu'il existe $i \in \N$ tel que $\mathfrak{g}^i = 0$.
 }
 
-%TODO: sous-algèbre, image directe, extensions d'algèbres résolubles et somme d'idéaux résolubles sont résoluble
+\prop{
+    Soit $\mathfrak{g}$ une algèbre de Lie résoluble.
+    \ilist{
+        \item Toute sous-algèbre de Lie de $\mathfrak{g}$ est résoluble.
+        \item Toute image directe de $\mathfrak{g}$ par un morphisme d'algèbres de Lie est résoluble.
+        \item Si $I$ est un idéal résoluble de $\mathfrak{g}$ tel que $\mathfrak{g}/I$ est résoluble, alors $\mathfrak{g}$ est résoluble.
+        \item Si $I$ et $J$ sont deux idéaux résolubles de $\mathfrak{g}$, alors $I + J$ est résoluble.
+    }
+}
 
-%TODO: nilpotent => résoluble
+%TODO: preuve
 
-%TODO: définiton du radical d'une algèbre de Lie
+\prop{
+    Toute algèbre de Lie nilpotente est résoluble.
+}
 
-%TODO: définition du centre d'une algèbre de Lie
+%TODO: preuve
+
+\defi{
+    Le \emphindex{radical} d'une algèbre de Lie $\mathfrak{g}$, noté $\rad(\mathfrak{g})$, est le plus grand idéal résoluble de $\mathfrak{g}$.
+}
 
 \subsection{Théorème de Lie}
 
@@ -208,6 +285,12 @@ Dans tout ce chapitre, soit $K$ un corps.
     une \emphindex{algèbre de Lie semi-simple} est une algèbre de Lie $\mathfrak{g}$ telle que $\rad(\mathfrak{g}) = 0$.
 }
 
+\prop{
+    Soit $\mathfrak{g}$ une algèbre de Lie. Alors $\mathfrak{g}/\rad(\mathfrak{g})$ est une algèbre de Lie semi-simple.
+}
+
+%TODO: preuve
+
 \subsection{Forme de Killing}
 
 \defi{
@@ -219,8 +302,35 @@ Dans tout ce chapitre, soit $K$ un corps.
     Soit $\mathfrak{g}$ une algèbre de Lie. Alors $\mathfrak{g}$ est semi-simple si et seulement si sa forme de Killing est non-dégénérée.
 }
 
-%TODO: semi-simple = somme directe d'idéaux simples
+\prop{
+    Soit $\mathfrak{g}$ une algèbre de Lie semi-simple. Alors toute dérivation de $\mathfrak{g}$ est intérieure :
+    $$\Der(\mathfrak{g}) = \mathrm{Int}(\mathfrak{g})$$
+}
 
-%TODO: semi-simple => toutes les dérivations sont interieures
+%TODO: preuve
 
-%TODO: decomposition de Jordan abstraite
+\prop{
+    Une algèbre de Lie $\mathfrak{g}$ est semi-simple si et seulement si elle se décompose en somme directe d'idéaux simples :
+    $$\mathfrak{g} \cong \mathfrak{g}_1 \oplus \cdots \oplus \mathfrak{g}_n$$
+    où les $\mathfrak{g}_i$ sont des idéaux simples de $\mathfrak{g}$, uniques à permutation près.
+}
+
+%TODO: preuve
+
+\subsection{Décomposition de Dunford abstraite}
+
+\defi{
+    Soit $\mathfrak{g}$ une algèbre de Lie semi-simple et $x \in \mathfrak{g}$.
+    \ilist{
+        \item $x$ est dit \emphindex{nilpotent} si $\ad x$ est un endomorphisme nilpotent de $\mathfrak{g}$.
+        \item $x$ est dit \emphindex{semi-simple} si $\ad x$ est un endomorphisme diagonalisable de $\mathfrak{g}$.
+    }
+}
+
+\prop{
+    Soit $\mathfrak{g}$ une algèbre de Lie semi-simple. Tout élément $x \in \mathfrak{g}$ se décompose de façon unique en 
+    $$x = x_s + x_n$$
+    où $x_s$ est semi-simple, $x_n$ est nilpotent et $[x_s, x_n] = 0$.
+}
+
+%TODO: preuve
