@@ -6,6 +6,7 @@
 Dans tout ce chapitre, soit $K$ un corps.
 
 \section{Généralités}
+\subsection{Définitions et premières propriétés}
 
 \defi{
     Une \emphindex{algèbre de Lie} $\mathfrak{g}$ est un $K$-espace vectoriel munie d'une application bilinéaire $\mathfrak{g}\times \mathfrak{g} \to \mathfrak{g}$, notée $(x,y) \mapsto [x, y]$ et appelée \emphindex{crochet de Lie}, vérifiant:
@@ -41,40 +42,101 @@ Dans tout ce chapitre, soit $K$ un corps.
     }
 }
 
-%TODO: preuve de cette proposition
+%TODO: preuve
 
-%TODO: Quotient d'une algèbre de Lie par un idéal & Théorème d'isomorphisme
+\subsection{Algèbre de Lie quotient et théorèmes d'isomorphismes}
 
-%TODO: Somme directe d'algèbre de Lie
+\defi{
+    Soit $I$ un idéal de $\mathfrak{g}$. L'\emphindex{algèbre de Lie quotient} $\mathfrak{g}/I$ est le $K$-espace vectoriel quotient muni du crochet de Lie
+    $$[\bar{x}, \bar{y}] = \overline{[x,y]}$$
+    où $\bar{x} = x + I$ désigne la classe de $x$ dans $\mathfrak{g}/I$. Ce crochet est bien défini car $I$ est un idéal.
+}
+
+
+\thm{
+    Soit $\varphi : \mathfrak{g} \to \mathfrak{h}$ un morphisme d'algèbres de Lie et $I \subset \ker(\varphi)$ un idéal de $\mathfrak{g}$. Alors il existe un unique morphisme d'algèbres de Lie $\bar{\varphi} : \mathfrak{g}/I \to \mathfrak{h}$ tel que $\varphi = \bar{\varphi} \circ \pi$, où $\pi : \mathfrak{g} \to \mathfrak{g}/I$ est la surjection canonique.
+}
+
+%TODO: preuve
+
+\cor{
+    Soit $\varphi : \mathfrak{g} \to \mathfrak{h}$ un morphisme d'algèbres de Lie. Alors
+    $$\mathfrak{g}/\ker(\varphi) \cong \Img(\varphi)$$
+}
+
+%TODO: preuve
+
+\thm{
+    Soit $\mathfrak{h}$ une sous-algèbre de Lie de $\mathfrak{g}$ et $I$ un idéal de $\mathfrak{g}$. Alors $\mathfrak{h} + I$ est une sous-algèbre de Lie de $\mathfrak{g}$, $\mathfrak{h} \cap I$ est un idéal de $\mathfrak{h}$, et
+    $$\mathfrak{h}/(\mathfrak{h} \cap I) \cong (\mathfrak{h} + I)/I$$
+}
+
+%TODO: preuve
+
+\thm{
+    Soit $I \subset J$ deux idéaux de $\mathfrak{g}$. Alors $J/I$ est un idéal de $\mathfrak{g}/I$ et
+    $$(\mathfrak{g}/I)/(J/I) \cong \mathfrak{g}/J$$
+}
+
+%TODO: preuve
+
+\subsection{Somme directe d'algèbres de Lie}
+
+\defi{
+    La \emphindex{somme directe} de deux algèbres de Lie $\mathfrak{g}$ et $\mathfrak{h}$ est le $K$-espace vectoriel $\mathfrak{g} \times \mathfrak{h}$ muni du crochet de Lie
+    $$[(x_1, y_1), (x_2, y_2)] = ([x_1, x_2]_{\mathfrak{g}},\ [y_1, y_2]_{\mathfrak{h}})$$
+    On la note $\mathfrak{g} \oplus \mathfrak{h}$.
+}
+
+\prop{
+    La somme directe $\mathfrak{g} \oplus \mathfrak{h}$ vérifie les propriétés universelles suivantes : pour toute algèbre de Lie $\mathfrak{k}$,
+    \ilist{
+        \item pour tout couple de morphismes $\varphi_1 : \mathfrak{k} \to \mathfrak{g}$ et $\varphi_2 : \mathfrak{k} \to \mathfrak{h}$, il existe un unique morphisme $\varphi : \mathfrak{k} \to \mathfrak{g} \oplus \mathfrak{h}$ tel que $\pi_1 \circ \varphi = \varphi_1$ et $\pi_2 \circ \varphi = \varphi_2$
+        \item pour tout couple de morphismes $\psi_1 : \mathfrak{g} \to \mathfrak{k}$ et $\psi_2 : \mathfrak{h} \to \mathfrak{k}$, il existe un unique morphisme $\psi : \mathfrak{g} \oplus \mathfrak{h} \to \mathfrak{k}$ tel que $\psi \circ \iota_1 = \psi_1$ et $\psi \circ \iota_2 = \psi_2$
+    }
+    où $\pi_1, \pi_2$ sont les projections canoniques et $\iota_1, \iota_2$ les injections canoniques.
+}
+
+%TODO: preuve
+
+\cor{
+    Les sous-espaces $\mathfrak{g} \times \{0\}$ et $\{0\} \times \mathfrak{h}$ sont des idéaux de $\mathfrak{g} \oplus \mathfrak{h}$, isomorphes respectivement à $\mathfrak{g}$ et $\mathfrak{h}$. Réciproquement, si une algèbre de Lie $\mathfrak{k}$ admet deux idéaux $I_1, I_2$ tels que $I_1 \cap I_2 = 0$ et $I_1 + I_2 = \mathfrak{k}$, alors $\mathfrak{k} \cong I_1 \oplus I_2$.
+}
+
+%TODO: preuve
 
 \subsection{Algèbres de Lie linéaires}
 
-%TODO: Algèbre de Lie des dérivations
-
-\section{Représentations d'algèbre de Lie et modules sur une algèbre de Lie}
-
-\subsection{Définitions}
-
 \defi{
-    Soit $\mathfrak{g}$ une algèbre de Lie. Une \emphindex{représentation d'algèbre de Lie} est la donnée $(V, \varphi)$ d'un $K$-espace vectoriel $V$ est d'un morphisme d'algèbres de Lie $\varphi : \mathfrak{g} \to \gl(V)$.
+    L'\emphindex{algèbre de Lie générale} est l'algèbre de Lie $\mathfrak{gl}(n, K)$ des matrices carrées $\mathcal{M}(n, K)$ munie du crochet de Lie
+    $$[X, Y] = XY - YX$$
 }
 
 \defi{
-    Un \emphindex{module sur une algèbre de Lie} $\mathfrak{g}$ est un $K$-espace vectoriel $V$ muni d'une action linéaire de $\mathfrak{g}$ sur $V$ telle que 
-    $$x\in \mathfrak{g} \mapsto (v\mapsto x.v) \in \gl(V)$$ est un morphisme d'algèbres de Lie.
+    L'\emphindex{algèbre de Lie spéciale linéaire} est la sous-algèbre de Lie
+    $$\mathfrak{sl}(n, K) = \ker(\tr) = \{ X \in \mathfrak{gl}(n, K) \mid \tr(X) = 0 \}$$
 }
 
-%TODO: somme directe, produit tensoriel, ... de représentations d'algèbre de Lie
+\defi{
+    L'\emphindex{algèbre de Lie symplectique} est la sous-algèbre de Lie
+    $$\mathfrak{sp}(2n, K) = \left\{ X \in \mathfrak{gl}(2n, K) \mid \transpose{X} J + J X = 0 \right\}$$
+    où $J = \begin{pmatrix} 0 & I_n \\ -I_n & 0 \end{pmatrix}$ est la matrice symplectique standard.
+}
 
-%TODO: morphisme de g-module, sous-module
+\defi{
+    L'\emphindex{algèbre de Lie orthogonale} est la sous-algèbre de Lie réelle
+    $$\mathfrak{o}(n, \mathbb{R}) = \mathfrak{so}(n, \mathbb{R}) = \{ X \in \mathfrak{gl}(n, \mathbb{R}) \mid \transpose{X} + X = 0 \}$$
+    Plus généralement, pour une forme de signature\footnote{La convention choisie ici place les valeurs négatives en premier dans $I_{p,q}$. L'autre convention, qui place les valeurs positives en premier, est également répandue et donne une algèbre de Lie isomorphe.} $(p, q)$, on définit
+    $$\mathfrak{o}(p, q, \mathbb{R}) = \mathfrak{so}(p, q, \mathbb{R}) = \{ X \in \mathfrak{gl}(p+q, \mathbb{R}) \mid \transpose{X} I_{p,q} + I_{p,q} X = 0 \}$$
+    où $I_{p,q} = \begin{pmatrix} -I_p & 0 \\ 0 & I_q \end{pmatrix}$.
+}
 
-%TODO: lemme de Schur
-
-%TODO: theorem de Weyl
-
-%TODO: préservation de la decomposition de Jordan
-
-\subsection{Représentations de $\mathfrak{sl}(2, \C)$}
+\defi{
+    L'\emphindex{algèbre de Lie unitaire} est la sous-algèbre de Lie complexe
+    $$\mathfrak{u}(n) = \{ X \in \mathfrak{gl}(n, \mathbb{C}) \mid X^\dagger + X = 0 \}$$
+    où $X^\dagger = \transpose{{\overline{X}}}$ désigne le conjugué hermitien. L'\emphindex{algèbre de Lie unitaire spéciale} est
+    $$\mathfrak{su}(n) = \{ X \in \mathfrak{u}(n) \mid \tr(X) = 0 \}$$
+}
 
 \section{Algèbre de Lie nilpotentes}
 
@@ -125,14 +187,14 @@ Dans tout ce chapitre, soit $K$ un corps.
 \noindent Dans cette partie on suppose que $K$ est algébriquement clos et de charactéristique nulle.
 
 \thm{
-    Soit $\mathfrak{g}$ une sous-algèbre de Lie résoluble de $\gl(V)$ où $V$ est un $K$-espace vectoriel non nul de dimension finie. Alors $V$ possède un vecteur propre commun à tous les élements de $\mathfrak{g}$
+    Soit $\mathfrak{g}$ une sous-algèbre de Lie résoluble de $\mathfrak{gl}(V)$ où $V$ est un $K$-espace vectoriel non nul de dimension finie. Alors $V$ possède un vecteur propre commun à tous les élements de $\mathfrak{g}$
 }
 %TODO: preuve du théorème de Lie
 
 \subsection{Critère de Cartan}
 
 \thm{
-    Soit $\mathfrak{g}$ une sous-algèbre de $\gl(V)$, où $V$ est un $K$-espace vectoriel de dimension finie, telle que $\tr(xy)=0$ pour tout $x\in [\mathfrak{g}, \mathfrak{g}]$ et tout $y\in\mathfrak{g}$. Alors $\mathfrak{g}$ est résoluble.
+    Soit $\mathfrak{g}$ une sous-algèbre de $\mathfrak{gl}(V)$, où $V$ est un $K$-espace vectoriel de dimension finie, telle que $\tr(xy)=0$ pour tout $x\in [\mathfrak{g}, \mathfrak{g}]$ et tout $y\in\mathfrak{g}$. Alors $\mathfrak{g}$ est résoluble.
 }
 %TODO: preuve du critère de Cartan
 
@@ -162,7 +224,3 @@ Dans tout ce chapitre, soit $K$ un corps.
 %TODO: semi-simple => toutes les dérivations sont interieures
 
 %TODO: decomposition de Jordan abstraite
-
-\section{Système de racines}
-
-\section{Classification des algèbres de Lie semi-simples}

@@ -82,7 +82,6 @@ théorie de Morse, classification des surfaces orientables et non-orientable, ca
 ### Chapitre 33 - Théorie des noeuds, cobordisme et tangles
 théorie des noeuds, cobordisme, tangles
 
-
 ## Partie 8 - Théorie de Lie
 ### Chapitre 34 - Algèbres de Lie
 algèbres de Lie, algèbre de Lie linéaires, algèbre enveloppante, algèbres de Lie des dérivations, algèbre de Lie nilpotente et résoluble, ideaux, algèbre de Lie simple et semi-simple, théorème d'Engel, de Lie et de Cartan, forme de Killing
@@ -93,11 +92,22 @@ lien entre représentation d'algèbres et de groupes de Lie, $\mathfrak{g}$-modu
 ### Chapitre 37 - Classification des algèbres de Lie semi-simples
 système de racines, diagrammes de Dynkin, classification $A_n$, $B_n$, $C_n$, $D_n$ et exceptionnelles 
 
-## Partie 9 - Physique
-### Chapitre 38 - Mécanique lagrangienne
-### Chapitre 39 - Théories de jauges
+## Partie 9 - Théorie des catégories
+### Chapitre 38 - Théorie des catégories
+catégories, foncteurs, transformations naturelles, lemme de Yoneda, adjonction, propriétés universelles
+### Chapitre 39 - Catégories tensorielles
+catégories monoidales, catégories tressées, algèbres de Hopf, groupes quantiques
+### Chapitre 40 - TQFT
+cobordismes, TQFT, théories de Dijkgraaf-Witten
+
+## Partie 10 - Physique
+### Chapitre 41 - Mécanique classique 
+principe de moindre action, formalisme lagrangien, formalisme hamiltonien, géométrie simplectique, crochets de Poisson, théorème de Noether
+### Chapitre 42 - Théories de jauges
 connexions comme champ de jauge, courbure comme tenseur de champ, transformation de jauges, théories de Yang-Mills, électromagnétisme
-### Chapitre 40 - Relativité générale
+### Chapitre 43 - Relativité générale
 variété lorentziennes, équations d'Einstein, géodésiques, solution exactes, linéarisations, ondes gravitationnelles
-### Chapitre 41 - Mécanique quantique
-### Chapitre 42 - Théorie quantique des champs
+### Chapitre 44 - Mécanique quantique
+algèbre d'observables, postulats de la mécanique quantique, équation de Schrodinger, représentation de Heisenberg et Schrodinger
+### Chapitre 45 - Théorie quantique des champs
+théorie classique des champs, quantification canonique, intégrale de chemin, champs libres et intéractions
