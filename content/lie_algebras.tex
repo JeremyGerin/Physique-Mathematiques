@@ -8,236 +8,240 @@ Dans tout ce chapitre, soit $K$ un corps.
 \section{Généralités}
 \subsection{Définitions et premières propriétés}
 
-\defi{
+\begin{definition}
     Une \emphindex{algèbre de Lie} $\mathfrak{g}$ est un $K$-espace vectoriel munie d'une application bilinéaire $\mathfrak{g}\times \mathfrak{g} \to \mathfrak{g}$, notée $(x,y) \mapsto [x, y]$ et appelée \emphindex{crochet de Lie}, vérifiant:
     \ilist{
         \item anticomutativité\footnote{si le corps est de caractéristique différente de $2$, cet axiome est équivalent à demander que $\forall x \in \mathfrak{g}, \quad [x,x] = 0$}: $\forall x, y \in \mathfrak{g}, \quad [x, y] = - [y, x]$
         \item identité de Jacobi\index{identité de Jacobi}: $\forall x, y, z \in \mathfrak{g}, \quad [x, [y, z]] + [y, [z, x]] + [z, [x, y]] = 0$
     }
-}
+\end{definition}
 
-\defi{
+\begin{definition}
     Un \emphindex{morphisme d'algèbres de Lie} est une application linéaire $\varphi: \mathfrak{g} \to \mathfrak{h}$ telle que 
     $$\forall x, y \in \mathfrak{g}, \quad \varphi([x,y]) = [\varphi(x), \varphi(y)]$$
     Un \emph{endomorphisme} est un morphisme $\mathfrak{g} \to \mathfrak{g}$. \\
     Un \emph{isomorphisme} est un morphisme bijectif. \\
     Un \emph{automorphisme} est un morphisme $\mathfrak{g} \to \mathfrak{g}$ bijectif.
-}
+\end{definition}
 
-\defi{
+\begin{definition}
     Une \emphindex{sous-algèbre de Lie} de $\mathfrak{g}$ est un sous-espace vectoriel $\mathfrak{h} \subset \mathfrak{g}$ stable par le crochet de Lie, c'est à dire :
     $$\forall x, y \in \mathfrak{h}, \quad [x,y] \in \mathfrak{h}$$ $\mathfrak{h}$ est donc une algèbre de Lie pour le crochet de Lie induit.
-}
+\end{definition}
 
-\defi{
+\begin{definition}
     Un \emphindex{idéal} de $\mathfrak{g}$ est un sous-espace vectoriel $I \subset \mathfrak{g}$ absorbant pour le crochet de Lie, c'est à dire :
     $$\forall x \in \mathfrak{g}, \forall y \in I, \quad [x, y] \in I$$ 
-}
+\end{definition}
 
-\prop{
+\begin{proposition}
     Soit $\varphi: \mathfrak{g} \to \mathfrak{h}$ un morphisme d'algèbres de Lie.
     \ilist{
         \item L'image directe $\Img(\varphi)$ est une sous-algèbre de Lie de $\mathfrak{h}$.
         \item Le noyau $\ker(\varphi)$ est un idéal de $\mathfrak{g}$.
     }
-}
+\end{proposition}
 
 %TODO: preuve
 
-\defi{
+\begin{definition}
     Une \emphindex{algèbre de Lie abélienne} est une algèbre de Lie $\mathfrak{g}$ dont le crochet est identiquement nul :
     $$\forall x, y \in \mathfrak{g}, \quad [x, y] = 0$$
-}
+\end{definition}
 
-\defi{
+\begin{definition}
     Le \emphindex{centre} d'une algèbre de Lie $\mathfrak{g}$ est le sous-espace vectoriel
     $$\mathcal{Z}(\mathfrak{g}) = \{ x \in \mathfrak{g} \mid \forall y \in \mathfrak{g},\ [x, y] = 0 \}$$
-}
+\end{definition}
 
-\prop{
+\begin{proposition}
     $\mathcal{Z}(\mathfrak{g})$ est un idéal abélien de $\mathfrak{g}$. C'est le plus grand idéal abélien de $\mathfrak{g}$.
-}
+\end{proposition}
 
 %TODO: preuve
 
 \subsection{Algèbre de Lie quotient et théorèmes d'isomorphismes}
 
-\defi{
+\begin{definition}
     Soit $I$ un idéal de $\mathfrak{g}$. L'\emphindex{algèbre de Lie quotient} $\mathfrak{g}/I$ est le $K$-espace vectoriel quotient muni du crochet de Lie
-    $$[\bar{x}, \bar{y}] = \overline{[x,y]}$$
-    où $\bar{x} = x + I$ désigne la classe de $x$ dans $\mathfrak{g}/I$. Ce crochet est bien défini car $I$ est un idéal.
-}
+    $$[x+I, y+I] = [x,y]+I$$
+    où $x + I$ désigne la classe de $x$ dans $\mathfrak{g}/I$. Ce crochet est bien défini car $I$ est un idéal.
+\end{definition}
 
-
-\thm{
-    Soit $\varphi : \mathfrak{g} \to \mathfrak{h}$ un morphisme d'algèbres de Lie et $I \subset \ker(\varphi)$ un idéal de $\mathfrak{g}$. Alors il existe un unique morphisme d'algèbres de Lie $\bar{\varphi} : \mathfrak{g}/I \to \mathfrak{h}$ tel que $\varphi = \bar{\varphi} \circ \pi$, où $\pi : \mathfrak{g} \to \mathfrak{g}/I$ est la surjection canonique.
-}
+\begin{theorem}
+    Soit $\varphi : \mathfrak{g} \to \mathfrak{h}$ un morphisme d'algèbres de Lie et $I \subset \ker(\varphi)$ un idéal de $\mathfrak{g}$. Alors il existe un unique morphisme d'algèbres de Lie $\phi : \mathfrak{g}/I \to \mathfrak{h}$ tel que le diagramme suivant est commutatif, c'est à dire tel que $\varphi = \phi \circ \pi$ :
+    \begin{diag}
+        \mathfrak{g} \arrow[r, "\varphi"] \arrow[d, epi, "\pi"'] & \mathfrak{h} \\
+        \mathfrak{g}/I \arrow[ur, dashed, "\phi"']
+    \end{diag}
+\end{theorem}
 
 %TODO: preuve
 
-\cor{
+\begin{corollary}
     Soit $\varphi : \mathfrak{g} \to \mathfrak{h}$ un morphisme d'algèbres de Lie. Alors
     $$\mathfrak{g}/\ker(\varphi) \cong \Img(\varphi)$$
-}
+\end{corollary}
 
 %TODO: preuve
 
-\thm{
+\begin{theorem}
     Soit $\mathfrak{h}$ une sous-algèbre de Lie de $\mathfrak{g}$ et $I$ un idéal de $\mathfrak{g}$. Alors $\mathfrak{h} + I$ est une sous-algèbre de Lie de $\mathfrak{g}$, $\mathfrak{h} \cap I$ est un idéal de $\mathfrak{h}$, et
     $$\mathfrak{h}/(\mathfrak{h} \cap I) \cong (\mathfrak{h} + I)/I$$
-}
+\end{theorem}
 
 %TODO: preuve
 
-\thm{
+\begin{theorem}
     Soit $I \subset J$ deux idéaux de $\mathfrak{g}$. Alors $J/I$ est un idéal de $\mathfrak{g}/I$ et
     $$(\mathfrak{g}/I)/(J/I) \cong \mathfrak{g}/J$$
-}
+\end{theorem}
 
 %TODO: preuve
 
 \subsection{Somme directe d'algèbres de Lie}
 
-\defi{
+\begin{definition}
     La \emphindex{somme directe} de deux algèbres de Lie $\mathfrak{g}$ et $\mathfrak{h}$ est le $K$-espace vectoriel $\mathfrak{g} \times \mathfrak{h}$ muni du crochet de Lie
     $$[(x_1, y_1), (x_2, y_2)] = ([x_1, x_2]_{\mathfrak{g}},\ [y_1, y_2]_{\mathfrak{h}})$$
     On la note $\mathfrak{g} \oplus \mathfrak{h}$.
-}
+\end{definition}
 
-\prop{
+\begin{proposition}
     La somme directe $\mathfrak{g} \oplus \mathfrak{h}$ vérifie les propriétés universelles suivantes : pour toute algèbre de Lie $\mathfrak{k}$,
     \ilist{
         \item pour tout couple de morphismes $\varphi_1 : \mathfrak{k} \to \mathfrak{g}$ et $\varphi_2 : \mathfrak{k} \to \mathfrak{h}$, il existe un unique morphisme $\varphi : \mathfrak{k} \to \mathfrak{g} \oplus \mathfrak{h}$ tel que $\pi_1 \circ \varphi = \varphi_1$ et $\pi_2 \circ \varphi = \varphi_2$
         \item pour tout couple de morphismes $\psi_1 : \mathfrak{g} \to \mathfrak{k}$ et $\psi_2 : \mathfrak{h} \to \mathfrak{k}$, il existe un unique morphisme $\psi : \mathfrak{g} \oplus \mathfrak{h} \to \mathfrak{k}$ tel que $\psi \circ \iota_1 = \psi_1$ et $\psi \circ \iota_2 = \psi_2$
     }
     où $\pi_1, \pi_2$ sont les projections canoniques et $\iota_1, \iota_2$ les injections canoniques.
-}
+\end{proposition}
 
 %TODO: preuve
 
-\cor{
+\begin{corollary}
     Les sous-espaces $\mathfrak{g} \times \{0\}$ et $\{0\} \times \mathfrak{h}$ sont des idéaux de $\mathfrak{g} \oplus \mathfrak{h}$, isomorphes respectivement à $\mathfrak{g}$ et $\mathfrak{h}$. Réciproquement, si une algèbre de Lie $\mathfrak{k}$ admet deux idéaux $I_1, I_2$ tels que $I_1 \cap I_2 = 0$ et $I_1 + I_2 = \mathfrak{k}$, alors $\mathfrak{k} \cong I_1 \oplus I_2$.
-}
+\end{corollary}
 
 %TODO: preuve
 
-\prop{
+\begin{proposition}
     La somme directe est associative à isomorphisme unique près : pour toutes algèbres de Lie $\mathfrak{g}$, $\mathfrak{h}$, $\mathfrak{k}$,
     $$(\mathfrak{g} \oplus \mathfrak{h}) \oplus \mathfrak{k} \cong \mathfrak{g} \oplus (\mathfrak{h} \oplus \mathfrak{k})$$
     On peut donc parler sans ambiguïté de la somme directe $\mathfrak{g}_1 \oplus \cdots \oplus \mathfrak{g}_n$ d'un nombre fini d'algèbres de Lie.
-}
+\end{proposition}
 
 %TODO: preuve
 
 \subsection{Algèbre de Lie des dérivations}
 
-\defi{
+\begin{definition}
     Soit $A$ un $K$-espace vectoriel muni d'une application bilinéaire $\mu : A \times A \to A$. Une \emphindex{dérivation} de $(A, \mu)$ est une application linéaire $\delta : A \to A$ vérifiant la règle de Leibniz :
     $$\delta(\mu(a,b)) = \mu(\delta(a), b) + \mu(a, \delta(b))$$
     L'ensemble des dérivations de $A$ est noté $\Der(A)$. \\
     Si $A$ est une $K$-algèbre, une dérivation de $A$ vérifie $$\delta(ab) = \delta(a)b + a\delta(b)$$
     Si $\mathfrak{g}$ est une algèbre de Lie, une dérivation de $\mathfrak{g}$ vérifie 
     $$\delta([x,y]) = [\delta(x), y] + [x, \delta(y)]$$
-}
+\end{definition}
 
-\prop{
+\begin{proposition}
     $\Der(A)$ est une sous-algèbre de Lie de $\mathfrak{gl}(A)$.
-}
+\end{proposition}
 
 %TODO: preuve
 
-\defi{
+\begin{definition}
     Soit $\mathfrak{g}$ une algèbre de Lie. Pour tout $x \in \mathfrak{g}$, la \emphindex{représentation adjointe} est le morphisme d'algèbres de Lie
     $$\ad : \mathfrak{g} \to \mathfrak{gl}(\mathfrak{g})$$
     défini par 
     $$\ad(x)(y) = [x, y]$$
-}
+\end{definition}
 
-\prop{
+\begin{proposition}
     Pour tout $x \in \mathfrak{g}$, $\ad x$ est une dérivation de $\mathfrak{g}$. Une telle dérivation est appelée \emphindex{dérivation intérieure}. Les dérivations intérieures forment un idéal de $\Der(\mathfrak{g})$, noté $\mathrm{Int}(\mathfrak{g})$.
-}
+\end{proposition}
 
 %TODO: preuve
 
 \subsection{Algèbres de Lie linéaires}
 
-\defi{
+\begin{definition}
     L'\emphindex{algèbre de Lie générale} est l'algèbre de Lie $\mathfrak{gl}(n, K)$ des matrices carrées $\mathcal{M}(n, K)$ munie du crochet de Lie
     $$[X, Y] = XY - YX$$
-}
+\end{definition}
 
-\defi{
+\begin{definition}
     L'\emphindex{algèbre de Lie spéciale linéaire} est la sous-algèbre de Lie
     $$\mathfrak{sl}(n, K) = \ker(\tr) = \{ X \in \mathfrak{gl}(n, K) \mid \tr(X) = 0 \}$$
-}
+\end{definition}
 
-\defi{
+\begin{definition}
     L'\emphindex{algèbre de Lie symplectique} est la sous-algèbre de Lie
     $$\mathfrak{sp}(2n, K) = \left\{ X \in \mathfrak{gl}(2n, K) \mid \transpose{X} J + J X = 0 \right\}$$
     où $J = \begin{pmatrix} 0 & I_n \\ -I_n & 0 \end{pmatrix}$ est la matrice symplectique standard.
-}
+\end{definition}
 
-\defi{
+\begin{definition}
     L'\emphindex{algèbre de Lie orthogonale} est la sous-algèbre de Lie réelle
     $$\mathfrak{o}(n, \mathbb{R}) = \mathfrak{so}(n, \mathbb{R}) = \{ X \in \mathfrak{gl}(n, \mathbb{R}) \mid \transpose{X} + X = 0 \}$$
     Plus généralement, pour une forme de signature\footnote{La convention choisie ici place les valeurs négatives en premier dans $I_{p,q}$. L'autre convention, qui place les valeurs positives en premier, est également répandue et donne une algèbre de Lie isomorphe.} $(p, q)$, on définit
     $$\mathfrak{o}(p, q, \mathbb{R}) = \mathfrak{so}(p, q, \mathbb{R}) = \{ X \in \mathfrak{gl}(p+q, \mathbb{R}) \mid \transpose{X} I_{p,q} + I_{p,q} X = 0 \}$$
     où $I_{p,q} = \begin{pmatrix} -I_p & 0 \\ 0 & I_q \end{pmatrix}$.
-}
+\end{definition}
 
-\defi{
+\begin{definition}
     L'\emphindex{algèbre de Lie unitaire} est la sous-algèbre de Lie complexe
     $$\mathfrak{u}(n) = \{ X \in \mathfrak{gl}(n, \mathbb{C}) \mid X^\dagger + X = 0 \}$$
     où $X^\dagger = \transpose{{\overline{X}}}$ désigne le conjugué hermitien. L'\emphindex{algèbre de Lie spéciale unitaire} est
     $$\mathfrak{su}(n) = \{ X \in \mathfrak{u}(n) \mid \tr(X) = 0 \}$$
-}
+\end{definition}
 
 \section{Algèbre de Lie nilpotentes}
 
 \subsection{Généralités}
 
-\defi{
+\begin{definition}
     La \emphindex{série centrale descendante} d'une algèbre de Lie $\mathfrak{g}$ est la suite d'idéaux de $\mathfrak{g}$ définie par :
     $$\mathfrak{g}_0 = \mathfrak{g} \quad \text{et} \quad \mathfrak{g}_{i+1} = [\mathfrak{g}, \mathfrak{g}_i]$$
-}
+\end{definition}
 
-\defi{
+\begin{definition}
     Une \emphindex{algèbre de Lie nilpotente} est une algèbre de Lie $\mathfrak{g}$ telle que sa série centrale descendante est nulle à partir d'un certain rang. C'est à dire qu'il existe $i \in \N$ tel que $\mathfrak{g}_i = 0$.
-}
+\end{definition}
 
-\prop{
+\begin{proposition}
     Soit $\mathfrak{g}$ une algèbre de Lie nilpotente.
     \ilist{
         \item Toute sous-algèbre de Lie de $\mathfrak{g}$ est nilpotente.
         \item Toute image directe de $\mathfrak{g}$ par un morphisme d'algèbres de Lie est nilpotente.
         \item Si $I$ est un idéal nilpotent de $\mathfrak{g}$ tel que $\mathfrak{g}/I$ est nilpotente, alors $\mathfrak{g}$ est nilpotente.
     }
-}
+\end{proposition}
 
 %TODO: preuve
 
 \subsection{Théorème d'Engel}
 
-\thm{
+\begin{theorem}
     Une algèbre de Lie $\mathfrak{g}$ est nilpotente si et seulement si 
     $$\forall x\in \mathfrak{g}, \quad \ad x \quad \text{est nilpotent}$$ 
-}
+\end{theorem}
+
 %TODO: preuve
 
 \section{Algèbres de Lie résolubles}
 
 \subsection{Généralités}
 
-\defi{
+\begin{definition}
     La \emphindex{série dérivée} d'une algèbre de Lie $\mathfrak{g}$ est la suite d'idéaux de $\mathfrak{g}$ définie par :
     $$\mathfrak{g}^0 = \mathfrak{g} \quad \text{et} \quad \mathfrak{g}^{i+1} = [\mathfrak{g}^i, \mathfrak{g}^i]$$
-}
+\end{definition}
 
-\defi{
+\begin{definition}
     Une \emphindex{algèbre de Lie résoluble} est une algèbre de Lie $\mathfrak{g}$ telle que sa série dérivée est nulle à partir d'un certain rang. C'est à dire qu'il existe $i \in \N$ tel que $\mathfrak{g}^i = 0$.
-}
+\end{definition}
 
-\prop{
+\begin{proposition}
     Soit $\mathfrak{g}$ une algèbre de Lie résoluble.
     \ilist{
         \item Toute sous-algèbre de Lie de $\mathfrak{g}$ est résoluble.
@@ -245,92 +249,77 @@ Dans tout ce chapitre, soit $K$ un corps.
         \item Si $I$ est un idéal résoluble de $\mathfrak{g}$ tel que $\mathfrak{g}/I$ est résoluble, alors $\mathfrak{g}$ est résoluble.
         \item Si $I$ et $J$ sont deux idéaux résolubles de $\mathfrak{g}$, alors $I + J$ est résoluble.
     }
-}
+\end{proposition}
 
 %TODO: preuve
 
-\prop{
+\begin{proposition}
     Toute algèbre de Lie nilpotente est résoluble.
-}
+\end{proposition}
 
 %TODO: preuve
 
-\defi{
+\begin{definition}
     Le \emphindex{radical} d'une algèbre de Lie $\mathfrak{g}$, noté $\rad(\mathfrak{g})$, est le plus grand idéal résoluble de $\mathfrak{g}$.
-}
+\end{definition}
 
 \subsection{Théorème de Lie}
 
 \noindent Dans cette partie on suppose que $K$ est algébriquement clos et de charactéristique nulle.
 
-\thm{
+\begin{theorem}
     Soit $\mathfrak{g}$ une sous-algèbre de Lie résoluble de $\mathfrak{gl}(V)$ où $V$ est un $K$-espace vectoriel non nul de dimension finie. Alors $V$ possède un vecteur propre commun à tous les élements de $\mathfrak{g}$
-}
-%TODO: preuve du théorème de Lie
+\end{theorem}
+
+%TODO: preuve 
 
 \subsection{Critère de Cartan}
 
-\thm{
+\begin{theorem}
     Soit $\mathfrak{g}$ une sous-algèbre de $\mathfrak{gl}(V)$, où $V$ est un $K$-espace vectoriel de dimension finie, telle que $\tr(xy)=0$ pour tout $x\in [\mathfrak{g}, \mathfrak{g}]$ et tout $y\in\mathfrak{g}$. Alors $\mathfrak{g}$ est résoluble.
-}
-%TODO: preuve du critère de Cartan
+\end{theorem}
+%TODO: preuve 
 
 \section{Algèbres de Lie semi-simples}
 
-\defi{
-    Une \emphindex{algèbre de Lie simple} est une algèbre de Lie $\mathfrak{g}$ qui ne possède aucun idéal autres que $0$ et elle-même.
-}
+\begin{definition}
+    Une \emphindex{algèbre de Lie simple} est une algèbre de Lie $\mathfrak{g}$ dont le centre est trivial et qui ne possède aucun idéal autres que $0$ et elle-même.
+\end{definition}
 
-\defi{
+\begin{definition}
     une \emphindex{algèbre de Lie semi-simple} est une algèbre de Lie $\mathfrak{g}$ telle que $\rad(\mathfrak{g}) = 0$.
-}
+\end{definition}
 
-\prop{
+\begin{proposition}
     Soit $\mathfrak{g}$ une algèbre de Lie. Alors $\mathfrak{g}/\rad(\mathfrak{g})$ est une algèbre de Lie semi-simple.
-}
+\end{proposition}
 
 %TODO: preuve
 
 \subsection{Forme de Killing}
 
-\defi{
+\begin{definition}
     Soit $\mathfrak{g}$ une algèbre de Lie. La \emphindex{forme de Killing} de $\mathfrak{g}$ est l'application $\kappa$ définie par:
     $$\forall x, y\in \mathfrak{g}, \quad \kappa(x,y) = \tr(\ad x \ad y)$$
-}
+\end{definition}
 
-\prop{
+\begin{proposition}
     Soit $\mathfrak{g}$ une algèbre de Lie. Alors $\mathfrak{g}$ est semi-simple si et seulement si sa forme de Killing est non-dégénérée.
-}
+\end{proposition}
 
-\prop{
+\begin{proposition}
     Soit $\mathfrak{g}$ une algèbre de Lie semi-simple. Alors toute dérivation de $\mathfrak{g}$ est intérieure :
     $$\Der(\mathfrak{g}) = \mathrm{Int}(\mathfrak{g})$$
-}
+\end{proposition}
 
 %TODO: preuve
 
-\prop{
+\subsection{Décomposition en somme directe d'idéaux simples}
+
+\begin{proposition}
     Une algèbre de Lie $\mathfrak{g}$ est semi-simple si et seulement si elle se décompose en somme directe d'idéaux simples :
     $$\mathfrak{g} \cong \mathfrak{g}_1 \oplus \cdots \oplus \mathfrak{g}_n$$
     où les $\mathfrak{g}_i$ sont des idéaux simples de $\mathfrak{g}$, uniques à permutation près.
-}
-
-%TODO: preuve
-
-\subsection{Décomposition de Dunford abstraite}
-
-\defi{
-    Soit $\mathfrak{g}$ une algèbre de Lie semi-simple et $x \in \mathfrak{g}$.
-    \ilist{
-        \item $x$ est dit \emphindex{nilpotent} si $\ad x$ est un endomorphisme nilpotent de $\mathfrak{g}$.
-        \item $x$ est dit \emphindex{semi-simple} si $\ad x$ est un endomorphisme diagonalisable de $\mathfrak{g}$.
-    }
-}
-
-\prop{
-    Soit $\mathfrak{g}$ une algèbre de Lie semi-simple. Tout élément $x \in \mathfrak{g}$ se décompose de façon unique en 
-    $$x = x_s + x_n$$
-    où $x_s$ est semi-simple, $x_n$ est nilpotent et $[x_s, x_n] = 0$.
-}
+\end{proposition}
 
 %TODO: preuve

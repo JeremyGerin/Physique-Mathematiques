@@ -1,5 +1,3 @@
-\usepackage{amsthm}
-
 % Style théorème (numérotation par chapitre)
 \newtheorem*{theorem}{Théorème}
 \newtheorem*{lemma}{Lemme}
@@ -11,3 +9,13 @@
 \newtheorem*{definition}{Définition}
 \newtheorem*{example}{Exemple}
 \newtheorem*{remark}{Remarque}
+
+% Diagrammes
+\newenvironment{diag}[1][column sep=normal, row sep=normal]
+  {\[\begin{tikzcd}[#1]}
+  {\end{tikzcd}\]}
+\tikzcdset{
+    mono/.style={hook, ->},
+    epi/.style={->>},
+    iso/.style={"\sim"{above}},
+}
