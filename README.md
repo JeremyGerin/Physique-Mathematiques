@@ -84,7 +84,15 @@ théorie des noeuds, cobordisme, tangles
 
 ## Partie 8 - Théorie de Lie
 ### Chapitre 34 - Algèbres de Lie
-algèbres de Lie, algèbre de Lie linéaires, algèbre enveloppante, algèbres de Lie des dérivations, algèbre de Lie nilpotente et résoluble, ideaux, algèbre de Lie simple et semi-simple, théorème d'Engel, de Lie et de Cartan, forme de Killing
+- **Généralités** : algèbres de Lie, morphismes, sous-algèbres, idéaux, algèbres abéliennes, centre
+- **Quotients et théorèmes d'isomorphismes** : algèbre quotient, théorème de factorisation, théorèmes d'isomorphismes
+- **Somme directe** : définition, propriétés universelles, associativité
+- **Dérivations** : dérivations d'une algèbre bilinéaire, algèbre de Lie des dérivations, représentation adjointe, dérivations intérieures
+- **Algèbres de Lie linéaires** : $\mathfrak{gl}$, $\mathfrak{sl}$, $\mathfrak{sp}$, $\mathfrak{so}$, $\mathfrak{o}$, $\mathfrak{u}$, $\mathfrak{su}$
+- **Nilpotence** : série centrale descendante, théorème d'Engel
+- **Résolubilité** : série dérivée, radical, théorème de Lie , critère de Cartan 
+- **Semi-simplicité** : algèbres simples et semi-simples, forme de Killing, décomposition en idéaux simples
+
 ### Chapitre 35 - Groupes de Lie
 groupes de Lie, exponentielles, algèbre de Lie associée, groupes de Lie compacts
 ### Chapitre 36 - Représentations de groupes et d'algèbres de Lie
