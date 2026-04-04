@@ -1,13 +1,13 @@
 \chapitre{Algèbres de Lie}
 
 \noindent
-Dans tout ce chapitre, soit $K$ un corps.
-
+Dans tout ce chapitre, soit $\mathbb{K}$ désigne $\R$ ou $\C$.
+ 
 \section{Généralités}
 \subsection{Définitions et premières propriétés}
 
 \begin{definition}
-    Une \emphindex{algèbre de Lie} $\mathfrak{g}$ est un $K$-espace vectoriel munie d'une application bilinéaire $\mathfrak{g}\times \mathfrak{g} \to \mathfrak{g}$, notée $(x,y) \mapsto [x, y]$ et appelée \emphindex{crochet de Lie}, vérifiant:
+    Une \emphindex{algèbre de Lie} $\mathfrak{g}$ est un $\mathbb{K}$-espace vectoriel munie d'une application bilinéaire $\mathfrak{g}\times \mathfrak{g} \to \mathfrak{g}$, notée $(x,y) \mapsto [x, y]$ et appelée \emphindex{crochet de Lie}, vérifiant:
     \ilist{
         \item anticomutativité\footnote{si le corps est de caractéristique différente de $2$, cet axiome est équivalent à demander que $\forall x \in \mathfrak{g}, \quad [x,x] = 0$}: $\forall x, y \in \mathfrak{g}, \quad [x, y] = - [y, x]$
         \item identité de Jacobi\index{identité de Jacobi}: $\forall x, y, z \in \mathfrak{g}, \quad [x, [y, z]] + [y, [z, x]] + [z, [x, y]] = 0$
@@ -61,7 +61,7 @@ Dans tout ce chapitre, soit $K$ un corps.
 \subsection{Algèbre de Lie quotient et théorèmes d'isomorphismes}
 
 \begin{definition}
-    Soit $I$ un idéal de $\mathfrak{g}$. L'\emphindex{algèbre de Lie quotient} $\mathfrak{g}/I$ est le $K$-espace vectoriel quotient muni du crochet de Lie
+    Soit $I$ un idéal de $\mathfrak{g}$. L'\emphindex{algèbre de Lie quotient} $\mathfrak{g}/I$ est le $\mathbb{K}$-espace vectoriel quotient muni du crochet de Lie
     $$[x+I, y+I] = [x,y]+I$$
     où $x + I$ désigne la classe de $x$ dans $\mathfrak{g}/I$. Ce crochet est bien défini car $I$ est un idéal.
 \end{definition}
@@ -100,7 +100,7 @@ Dans tout ce chapitre, soit $K$ un corps.
 \subsection{Somme directe d'algèbres de Lie}
 
 \begin{definition}
-    La \emphindex{somme directe} de deux algèbres de Lie $\mathfrak{g}$ et $\mathfrak{h}$ est le $K$-espace vectoriel $\mathfrak{g} \times \mathfrak{h}$ muni du crochet de Lie
+    La \emphindex{somme directe} de deux algèbres de Lie $\mathfrak{g}$ et $\mathfrak{h}$ est le $\mathbb{K}$-espace vectoriel $\mathfrak{g} \times \mathfrak{h}$ muni du crochet de Lie
     $$[(x_1, y_1), (x_2, y_2)] = ([x_1, x_2]_{\mathfrak{g}},\ [y_1, y_2]_{\mathfrak{h}})$$
     On la note $\mathfrak{g} \oplus \mathfrak{h}$.
 \end{definition}
@@ -133,7 +133,7 @@ Dans tout ce chapitre, soit $K$ un corps.
 \subsection{Algèbre de Lie des dérivations}
 
 \begin{definition}
-    Soit $A$ un $K$-espace vectoriel muni d'une application bilinéaire $\mu : A \times A \to A$. Une \emphindex{dérivation} de $(A, \mu)$ est une application linéaire $\delta : A \to A$ vérifiant la règle de Leibniz :
+    Soit $A$ un $\mathbb{K}$-espace vectoriel muni d'une application bilinéaire $\mu : A \times A \to A$. Une \emphindex{dérivation} de $(A, \mu)$ est une application linéaire $\delta : A \to A$ vérifiant la règle de Leibniz :
     $$\delta(\mu(a,b)) = \mu(\delta(a), b) + \mu(a, \delta(b))$$
     L'ensemble des dérivations de $A$ est noté $\Der(A)$. \\
     Si $A$ est une $K$-algèbre, une dérivation de $A$ vérifie $$\delta(ab) = \delta(a)b + a\delta(b)$$
@@ -160,36 +160,59 @@ Dans tout ce chapitre, soit $K$ un corps.
 
 %TODO: preuve
 
+\subsection{Reduction et extension des scalaires}
+
+\noindent
+Les constructions qui suivent sont spécifiques à l'inclusion $\R \hookrightarrow \C$ et permettent de passer d'une algèbre de Lie réelle à une algèbre de Lie complexe, et réciproquement.
+
+\begin{definition}
+    Soit $\mathfrak{g}$ une algèbre de Lie complexe. La \emph{restriction des scalaires} de $\mathfrak{g}$ est l'algèbre de Lie réelle $\mathfrak{g}^{\R}$ obtenue en oubliant la structure de $\C$-espace vectoriel de $\mathfrak{g}$ pour ne retenir que sa structure de $\R$-espace vectoriel. Le crochet de Lie est inchangé. On a
+    $$\dim_{\R} \mathfrak{g}^{\R} = 2 \dim_{\C} \mathfrak{g}$$
+\end{definition}
+
+\begin{definition}
+    Soit $\mathfrak{g}$ une algèbre de Lie réelle. La \emph{complexification} de $\mathfrak{g}$ est l'algèbre de Lie complexe
+    $$\mathfrak{g}^{\C} = \mathfrak{g} \otimes_{\R} \C$$
+    munie du crochet de Lie étendu par $\C$-bilinéarité :
+    $$[x \otimes z,\ y \otimes w] = [x, y] \otimes zw$$
+    La multiplication scalaire complexe est donnée par $\lambda \cdot (x \otimes z) = x \otimes (\lambda z)$. Tout élément de $\mathfrak{g}^{\C}$ s'écrit de manière unique sous la forme $x \otimes 1 + y \otimes i$, que l'on note $x + iy$ avec $x, y \in \mathfrak{g}$.
+\end{definition}
+
+\begin{definition}
+    Soit $\mathfrak{g}$ une algèbre de Lie complexe. Une \emphindex{forme réelle} de $\mathfrak{g}$ est une sous-algèbre de Lie réelle $\mathfrak{h} \subset \mathfrak{g}^{\R}$ telle que
+    $$\mathfrak{h}^{\C} \cong \mathfrak{g}$$
+\end{definition}
+
 \subsection{Algèbres de Lie linéaires}
 
 \begin{definition}
-    L'\emphindex{algèbre de Lie générale} est l'algèbre de Lie $\mathfrak{gl}(n, K)$ des matrices carrées $\mathcal{M}(n, K)$ munie du crochet de Lie
+    L'\emphindex{algèbre de Lie générale} est l'algèbre de Lie $\mathfrak{gl}(n, \mathbb{K})$ des matrices carrées $\mathcal{M}(n, \mathbb{K})$ munie du crochet de Lie
     $$[X, Y] = XY - YX$$
 \end{definition}
 
 \begin{definition}
     L'\emphindex{algèbre de Lie spéciale linéaire} est la sous-algèbre de Lie
-    $$\mathfrak{sl}(n, K) = \ker(\tr) = \{ X \in \mathfrak{gl}(n, K) \mid \tr(X) = 0 \}$$
+    $$\mathfrak{sl}(n, \mathbb{K}) = \ker(\tr) = \{ X \in \mathfrak{gl}(n, \mathbb{K}) \mid \tr(X) = 0 \}$$
 \end{definition}
 
 \begin{definition}
     L'\emphindex{algèbre de Lie symplectique} est la sous-algèbre de Lie
-    $$\mathfrak{sp}(2n, K) = \left\{ X \in \mathfrak{gl}(2n, K) \mid \transpose{X} J + J X = 0 \right\}$$
+    $$\mathfrak{sp}(2n, \mathbb{K}) = \left\{ X \in \mathfrak{gl}(2n, \mathbb{K}) \mid \transpose{X} J + J X = 0 \right\}$$
     où $J = \begin{pmatrix} 0 & I_n \\ -I_n & 0 \end{pmatrix}$ est la matrice symplectique standard.
 \end{definition}
 
 \begin{definition}
     L'\emphindex{algèbre de Lie orthogonale} est la sous-algèbre de Lie réelle
-    $$\mathfrak{o}(n, \mathbb{R}) = \mathfrak{so}(n, \mathbb{R}) = \{ X \in \mathfrak{gl}(n, \mathbb{R}) \mid \transpose{X} + X = 0 \}$$
+    $$\mathfrak{o}(n) = \mathfrak{so}(n) = \{ X \in \mathfrak{gl}(n, \mathbb{R}) \mid \transpose{X} + X = 0 \}$$
     Plus généralement, pour une forme de signature\footnote{La convention choisie ici place les valeurs négatives en premier dans $I_{p,q}$. L'autre convention, qui place les valeurs positives en premier, est également répandue et donne une algèbre de Lie isomorphe.} $(p, q)$, on définit
-    $$\mathfrak{o}(p, q, \mathbb{R}) = \mathfrak{so}(p, q, \mathbb{R}) = \{ X \in \mathfrak{gl}(p+q, \mathbb{R}) \mid \transpose{X} I_{p,q} + I_{p,q} X = 0 \}$$
+    $$\mathfrak{o}(p, q) = \mathfrak{so}(p, q) = \{ X \in \mathfrak{gl}(p+q, \mathbb{R}) \mid \transpose{X} I_{p,q} + I_{p,q} X = 0 \}$$
     où $I_{p,q} = \begin{pmatrix} -I_p & 0 \\ 0 & I_q \end{pmatrix}$.
 \end{definition}
 
 \begin{definition}
-    L'\emphindex{algèbre de Lie unitaire} est la sous-algèbre de Lie complexe
-    $$\mathfrak{u}(n) = \{ X \in \mathfrak{gl}(n, \mathbb{C}) \mid X^\dagger + X = 0 \}$$
-    où $X^\dagger = \transpose{{\overline{X}}}$ désigne le conjugué hermitien. L'\emphindex{algèbre de Lie spéciale unitaire} est
+    L'\emphindex{algèbre de Lie unitaire} est l'algèbre de Lie réelle
+    $$\mathfrak{u}(n) = \{ X \in \mathfrak{gl}(n, \C) \mid X^\dagger + X = 0 \}$$
+    où $X^\dagger = \transpose{{\overline{X}}}$ désigne le conjugué hermitien. L'\emphindex{algèbre de Lie spéciale unitaire} est la sous-algèbre de Lie réelle
     $$\mathfrak{su}(n) = \{ X \in \mathfrak{u}(n) \mid \tr(X) = 0 \}$$
 \end{definition}
 
@@ -263,21 +286,18 @@ Dans tout ce chapitre, soit $K$ un corps.
 
 \subsection{Théorème de Lie}
 
-\noindent Dans cette partie on suppose que $K$ est algébriquement clos et de caractéristique nulle.
-
 \begin{theorem}
-    Soit $\mathfrak{g}$ une sous-algèbre de Lie résoluble de $\mathfrak{gl}(V)$ où $V$ est un $K$-espace vectoriel non nul de dimension finie. Alors $V$ possède un vecteur propre commun à tous les élements de $\mathfrak{g}$
+    Soit $\mathfrak{g}$ une sous-algèbre de Lie complexe et résoluble de $\mathfrak{gl}(V)$ où $V$ est un $\C$-espace vectoriel non nul de dimension finie. Alors $V$ possède un vecteur propre commun à tous les élements de $\mathfrak{g}$
 \end{theorem}
 
 %TODO: preuve 
 
 \subsection{Critère de Cartan}
 
-\noindent Dans cette partie on suppose que $K$ est de caractéristique nulle.
-
 \begin{theorem}
-    Soit $\mathfrak{g}$ une sous-algèbre de $\mathfrak{gl}(V)$, où $V$ est un $K$-espace vectoriel de dimension finie, telle que $\tr(xy)=0$ pour tout $x\in [\mathfrak{g}, \mathfrak{g}]$ et tout $y\in\mathfrak{g}$. Alors $\mathfrak{g}$ est résoluble.
+    Soit $\mathfrak{g}$ une sous-algèbre de $\mathfrak{gl}(V)$, où $V$ est un $\mathbb{K}$-espace vectoriel de dimension finie, telle que $\tr(xy)=0$ pour tout $x\in [\mathfrak{g}, \mathfrak{g}]$ et tout $y\in\mathfrak{g}$. Alors $\mathfrak{g}$ est résoluble.
 \end{theorem}
+
 %TODO: preuve 
 
 \section{Algèbres de Lie semi-simples}
