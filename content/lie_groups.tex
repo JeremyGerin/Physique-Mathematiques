@@ -1,1 +1,99 @@
 \chapitre{Groupes de Lie}
+
+\section{Généralités}
+
+\subsection{Définitions et premières propriétés}
+
+\begin{definition}
+    Un \emphindex{groupe de Lie} est un ensemble $G$ munie d'une structure de groupe et d'une structure de variété lisse telle que l'application 
+    $$(g, h) \in G\times G \mapsto gh^{-1} \in G$$
+    est lisse.
+\end{definition}
+
+\begin{proposition}
+    Soit $G$ une variété lisse munie d'une structure de groupe. Les conditions suivantes sont équivalentes :
+    \ilist{
+        \item l'application $(x, y) \mapsto xy^{-1}$ est lisse
+        \item la multiplication $(x,y) \mapsto xy$,
+          et l'inversion $x \mapsto x^{-1}$, sont
+          toutes deux lisses.
+    }
+\end{proposition}
+
+%TODO: preuve
+
+\begin{definition}
+    Un \emphindex{morphisme de groupes de Lie} est un morphisme de groupe lisse. \\
+    Un \emph{endomorphisme} est un morphisme d'un groupe de Lie dans lui-même. \\
+    Un \emph{isomorphisme} est un morphisme bijectif tel que l'inverse est lisse. \\
+    Un \emph{automorphisme} est à la fois un endomorphisme et un isomorphisme.
+\end{definition}
+
+\subsection{Groupes de Lie usuels}
+
+\begin{definition}
+    Le \emphindex{groupe linéaire général} est le groupe de Lie
+    $$\GL(n, \K) = \{ M \in \mathcal{M}(n, \K) \mid \det M \neq 0 \}$$
+    de dimension réelle $n^2$ si $\K = \R$, et $2n^2$ si
+  $\K = \C$.
+\end{definition}
+
+\begin{definition}
+    Le \emphindex{groupe linéaire spécial} est le groupe de Lie
+    $$\SL(n, \K) = \{ M \in \GL(n, \K) \mid \det M = 1 \}$$
+    de dimension réelle $n^2 - 1$ si $\K = \R$, et $2n^2 - 2$ si
+  $\K = \C$.
+\end{definition}
+
+\begin{definition}
+    Le \emphindex{groupe orthogonal} est le groupe de Lie
+    $$O(n) = \{ M \in \GL(n, \R) \mid \transpose{M} M = I_n \}$$
+    de dimension réelle $\frac{n(n-1)}{2}$. \\
+    Le \emphindex{groupe spécial orthogonal} est le groupe de Lie 
+    $$\SO(n) = O(n) \cap \SL(n, \R)$$ aussi de dimension réelle $\frac{n(n-1)}{2}$.
+\end{definition}
+
+\begin{definition}
+    Le \emphindex{groupe unitaire} est le groupe de Lie
+    $$U(n) = \{ M \in \GL(n, \C) \mid M^\dagger M = I_n \}$$
+    de dimension réelle $n^2$. \\
+    Le \emphindex{groupe spécial unitaire} est le groupe de Lie 
+    $$\SU(n) = U(n) \cap \SL(n, \C)$$ de dimension réelle $n^2 - 1$.
+\end{definition}
+
+\begin{definition}
+    Le \emphindex{groupe simplectique} est le groupe de Lie
+    $$\Sp(2n, \K) = \{ M \in \GL(2n, \K) \mid \transpose{M}JM=J \}$$
+    où $J = \begin{pmatrix} 0 & I_n \\ -I_n & 0 \end{pmatrix}$ est la matrice symplectique standard et de dimension réelle $n(2n+1)$ si $\K = \R$, et $2n(2n+1)$ si
+  $\K = \C$.
+\end{definition}
+
+\section{Algèbre de Lie d'un groupe de Lie}
+
+\noindent Soit $G$ un groupe de Lie. Pour $g \in G$, on note $L_g : G \to G$ la translation à gauche $L_g(h) = gh$, qui est un automorphisme.
+
+\begin{definition}
+  Un champ de vecteurs $X \in \Gamma(TG)$ est dit
+  \emphindex{invariant à gauche} si
+  $$(L_g)_* X = X \qquad \forall g \in G.$$
+  c'est-à-dire si $d(L_g)_h(X_h) = X_{gh}$ pour tous $g, h \in G$.
+  On note $\mathcal{L}(G)$ l'espace des champs de vecteurs invariant à gauche.
+\end{definition}
+
+\begin{proposition}
+  $\mathcal{L}(G)$ est une sous-algèbre de Lie de $\Gamma(TG)$.
+\end{proposition}
+
+Comme $d(L_g)_h : T_h G \to T_{gh} G$ est un isomorphisme d'espaces vectoriels, un champ invariant à gauche est entièrement déterminé par sa valeur en $e$. Pour tout $v \in T_e G$, il existe un unique champ de vecteurs invariant à gauche $v^\sharp$ tel que $(v^\sharp)_e = v$, donné explicitement par $v^\sharp(g) = d(L_g)_e\, v$. Ainsi, l'application $.^\sharp : v \mapsto v^\sharp$ est un isomorphisme d'espaces vectoriels entre $T_e G$ et $\mathcal{L}(G)$.
+
+
+\begin{definition}
+    L'\emph{algèbre de Lie associée au groupe de Lie $G$} est $T_e G$ désormais noté $\mathfrak{g}$ munie de l'unique structure d'algèbre de Lie faisant de l'isomorphisme d'espace vectoriel $.^\sharp$ un isomorphisme d'algèbres Lie. C'est à dire que sur $\mathfrak{g}$ le crochet de Lie est définie par 
+    $$[u, v] = [u^\sharp, v^\sharp](e)$$
+\end{definition}
+
+\begin{proposition}
+  Soit $\varphi : G \to H$ un morphisme de groupes de Lie. Alors l'application tangente en l'identité
+  $$T_e\varphi : \mathfrak{g} \longrightarrow \mathfrak{h}$$
+  est un morphisme d'algèbres de Lie.
+\end{proposition}

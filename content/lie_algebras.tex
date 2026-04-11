@@ -1,13 +1,13 @@
 \chapitre{Algèbres de Lie}
 
 \noindent
-Dans tout ce chapitre, soit $\mathbb{K}$ désigne $\R$ ou $\C$.
+Dans tout ce chapitre, soit $\K$ désigne $\R$ ou $\C$.
  
 \section{Généralités}
 \subsection{Définitions et premières propriétés}
 
 \begin{definition}
-    Une \emphindex{algèbre de Lie} $\mathfrak{g}$ est un $\mathbb{K}$-espace vectoriel munie d'une application bilinéaire $\mathfrak{g}\times \mathfrak{g} \to \mathfrak{g}$, notée $(x,y) \mapsto [x, y]$ et appelée \emphindex{crochet de Lie}, vérifiant:
+    Une \emphindex{algèbre de Lie} $\mathfrak{g}$ est un $\K$-espace vectoriel munie d'une application bilinéaire $\mathfrak{g}\times \mathfrak{g} \to \mathfrak{g}$, notée $(x,y) \mapsto [x, y]$ et appelée \emphindex{crochet de Lie}, vérifiant:
     \ilist{
         \item anticomutativité\footnote{si le corps est de caractéristique différente de $2$, cet axiome est équivalent à demander que $\forall x \in \mathfrak{g}, \quad [x,x] = 0$}: $\forall x, y \in \mathfrak{g}, \quad [x, y] = - [y, x]$
         \item identité de Jacobi\index{identité de Jacobi}: $\forall x, y, z \in \mathfrak{g}, \quad [x, [y, z]] + [y, [z, x]] + [z, [x, y]] = 0$
@@ -17,9 +17,9 @@ Dans tout ce chapitre, soit $\mathbb{K}$ désigne $\R$ ou $\C$.
 \begin{definition}
     Un \emphindex{morphisme d'algèbres de Lie} est une application linéaire $\varphi: \mathfrak{g} \to \mathfrak{h}$ telle que 
     $$\forall x, y \in \mathfrak{g}, \quad \varphi([x,y]) = [\varphi(x), \varphi(y)]$$
-    Un \emph{endomorphisme} est un morphisme $\mathfrak{g} \to \mathfrak{g}$. \\
+    Un \emph{endomorphisme} est un morphisme d'une algèbre de Lie dans elle-même. \\
     Un \emph{isomorphisme} est un morphisme bijectif. \\
-    Un \emph{automorphisme} est un morphisme $\mathfrak{g} \to \mathfrak{g}$ bijectif.
+    Un \emph{automorphisme} est à la fois un endomorphisme et un isomorphisme.
 \end{definition}
 
 \begin{definition}
@@ -61,7 +61,7 @@ Dans tout ce chapitre, soit $\mathbb{K}$ désigne $\R$ ou $\C$.
 \subsection{Algèbre de Lie quotient et théorèmes d'isomorphismes}
 
 \begin{definition}
-    Soit $I$ un idéal de $\mathfrak{g}$. L'\emphindex{algèbre de Lie quotient} $\mathfrak{g}/I$ est le $\mathbb{K}$-espace vectoriel quotient muni du crochet de Lie
+    Soit $I$ un idéal de $\mathfrak{g}$. L'\emphindex{algèbre de Lie quotient} $\mathfrak{g}/I$ est le $\K$-espace vectoriel quotient muni du crochet de Lie
     $$[x+I, y+I] = [x,y]+I$$
     où $x + I$ désigne la classe de $x$ dans $\mathfrak{g}/I$. Ce crochet est bien défini car $I$ est un idéal.
 \end{definition}
@@ -100,7 +100,7 @@ Dans tout ce chapitre, soit $\mathbb{K}$ désigne $\R$ ou $\C$.
 \subsection{Somme directe d'algèbres de Lie}
 
 \begin{definition}
-    La \emphindex{somme directe} de deux algèbres de Lie $\mathfrak{g}$ et $\mathfrak{h}$ est le $\mathbb{K}$-espace vectoriel $\mathfrak{g} \times \mathfrak{h}$ muni du crochet de Lie
+    La \emphindex{somme directe} de deux algèbres de Lie $\mathfrak{g}$ et $\mathfrak{h}$ est le $\K$-espace vectoriel $\mathfrak{g} \times \mathfrak{h}$ muni du crochet de Lie
     $$[(x_1, y_1), (x_2, y_2)] = ([x_1, x_2]_{\mathfrak{g}},\ [y_1, y_2]_{\mathfrak{h}})$$
     On la note $\mathfrak{g} \oplus \mathfrak{h}$.
 \end{definition}
@@ -133,7 +133,7 @@ Dans tout ce chapitre, soit $\mathbb{K}$ désigne $\R$ ou $\C$.
 \subsection{Algèbre de Lie des dérivations}
 
 \begin{definition}
-    Soit $A$ un $\mathbb{K}$-espace vectoriel muni d'une application bilinéaire $\mu : A \times A \to A$. Une \emphindex{dérivation} de $(A, \mu)$ est une application linéaire $\delta : A \to A$ vérifiant la règle de Leibniz :
+    Soit $A$ un $\K$-espace vectoriel muni d'une application bilinéaire $\mu : A \times A \to A$. Une \emphindex{dérivation} de $(A, \mu)$ est une application linéaire $\delta : A \to A$ vérifiant la règle de Leibniz :
     $$\delta(\mu(a,b)) = \mu(\delta(a), b) + \mu(a, \delta(b))$$
     L'ensemble des dérivations de $A$ est noté $\Der(A)$. \\
     Si $A$ est une $K$-algèbre, une dérivation de $A$ vérifie $$\delta(ab) = \delta(a)b + a\delta(b)$$
@@ -186,18 +186,18 @@ Les constructions qui suivent sont spécifiques à l'inclusion $\R \hookrightarr
 \subsection{Algèbres de Lie linéaires}
 
 \begin{definition}
-    L'\emphindex{algèbre de Lie générale} est l'algèbre de Lie $\mathfrak{gl}(n, \mathbb{K})$ des matrices carrées $\mathcal{M}(n, \mathbb{K})$ munie du crochet de Lie
+    L'\emphindex{algèbre de Lie générale} est l'algèbre de Lie $\mathfrak{gl}(n, \K)$ des matrices carrées $\mathcal{M}(n, \K)$ munie du crochet de Lie
     $$[X, Y] = XY - YX$$
 \end{definition}
 
 \begin{definition}
     L'\emphindex{algèbre de Lie spéciale linéaire} est la sous-algèbre de Lie
-    $$\mathfrak{sl}(n, \mathbb{K}) = \ker(\tr) = \{ X \in \mathfrak{gl}(n, \mathbb{K}) \mid \tr(X) = 0 \}$$
+    $$\mathfrak{sl}(n, \K) = \ker(\tr) = \{ X \in \mathfrak{gl}(n, \K) \mid \tr(X) = 0 \}$$
 \end{definition}
 
 \begin{definition}
     L'\emphindex{algèbre de Lie symplectique} est la sous-algèbre de Lie
-    $$\mathfrak{sp}(2n, \mathbb{K}) = \left\{ X \in \mathfrak{gl}(2n, \mathbb{K}) \mid \transpose{X} J + J X = 0 \right\}$$
+    $$\mathfrak{sp}(2n, \K) = \left\{ X \in \mathfrak{gl}(2n, \K) \mid \transpose{X} J + J X = 0 \right\}$$
     où $J = \begin{pmatrix} 0 & I_n \\ -I_n & 0 \end{pmatrix}$ est la matrice symplectique standard.
 \end{definition}
 
@@ -295,7 +295,7 @@ Les constructions qui suivent sont spécifiques à l'inclusion $\R \hookrightarr
 \subsection{Critère de Cartan}
 
 \begin{theorem}
-    Soit $\mathfrak{g}$ une sous-algèbre de $\mathfrak{gl}(V)$, où $V$ est un $\mathbb{K}$-espace vectoriel de dimension finie, telle que $\tr(xy)=0$ pour tout $x\in [\mathfrak{g}, \mathfrak{g}]$ et tout $y\in\mathfrak{g}$. Alors $\mathfrak{g}$ est résoluble.
+    Soit $\mathfrak{g}$ une sous-algèbre de $\mathfrak{gl}(V)$, où $V$ est un $\K$-espace vectoriel de dimension finie, telle que $\tr(xy)=0$ pour tout $x\in [\mathfrak{g}, \mathfrak{g}]$ et tout $y\in\mathfrak{g}$. Alors $\mathfrak{g}$ est résoluble.
 \end{theorem}
 
 %TODO: preuve 
