@@ -5,7 +5,7 @@
 \subsection{Définitions et premières propriétés}
 
 \begin{definition}
-    Un \emphindex{groupe de Lie} est un ensemble $G$ munie d'une structure de groupe et d'une structure de variété lisse telle que l'application 
+    Un \emph{groupe de Lie} est un ensemble $G$ munie d'une structure de groupe et d'une structure de variété lisse telle que l'application 
     $$(g, h) \in G\times G \mapsto gh^{-1} \in G$$
     est lisse.
 \end{definition}
@@ -20,10 +20,10 @@
     }
 \end{proposition}
 
-%TODO: preuve
+\omitted
 
 \begin{definition}
-    Un \emphindex{morphisme de groupes de Lie} est un morphisme de groupe lisse. \\
+    Un \emph{morphisme de groupes de Lie} est un morphisme de groupe lisse. \\
     Un \emph{endomorphisme} est un morphisme d'un groupe de Lie dans lui-même. \\
     Un \emph{isomorphisme} est un morphisme bijectif tel que l'inverse est lisse. \\
     Un \emph{automorphisme} est à la fois un endomorphisme et un isomorphisme.
@@ -32,37 +32,37 @@
 \subsection{Groupes de Lie usuels}
 
 \begin{definition}
-    Le \emphindex{groupe linéaire général} est le groupe de Lie
+    Le \emph{groupe linéaire général} est le groupe de Lie
     $$\GL(n, \K) = \{ M \in \mathcal{M}(n, \K) \mid \det M \neq 0 \}$$
     de dimension réelle $n^2$ si $\K = \R$, et $2n^2$ si
   $\K = \C$.
 \end{definition}
 
 \begin{definition}
-    Le \emphindex{groupe linéaire spécial} est le groupe de Lie
+    Le \emph{groupe linéaire spécial} est le groupe de Lie
     $$\SL(n, \K) = \{ M \in \GL(n, \K) \mid \det M = 1 \}$$
     de dimension réelle $n^2 - 1$ si $\K = \R$, et $2n^2 - 2$ si
   $\K = \C$.
 \end{definition}
 
 \begin{definition}
-    Le \emphindex{groupe orthogonal} est le groupe de Lie
+    Le \emph{groupe orthogonal} est le groupe de Lie
     $$O(n) = \{ M \in \GL(n, \R) \mid \transpose{M} M = I_n \}$$
     de dimension réelle $\frac{n(n-1)}{2}$. \\
-    Le \emphindex{groupe spécial orthogonal} est le groupe de Lie 
+    Le \emph{groupe spécial orthogonal} est le groupe de Lie 
     $$\SO(n) = O(n) \cap \SL(n, \R)$$ aussi de dimension réelle $\frac{n(n-1)}{2}$.
 \end{definition}
 
 \begin{definition}
-    Le \emphindex{groupe unitaire} est le groupe de Lie
+    Le \emph{groupe unitaire} est le groupe de Lie
     $$U(n) = \{ M \in \GL(n, \C) \mid M^\dagger M = I_n \}$$
     de dimension réelle $n^2$. \\
-    Le \emphindex{groupe spécial unitaire} est le groupe de Lie 
+    Le \emph{groupe spécial unitaire} est le groupe de Lie 
     $$\SU(n) = U(n) \cap \SL(n, \C)$$ de dimension réelle $n^2 - 1$.
 \end{definition}
 
 \begin{definition}
-    Le \emphindex{groupe simplectique} est le groupe de Lie
+    Le \emph{groupe simplectique} est le groupe de Lie
     $$\Sp(2n, \K) = \{ M \in \GL(2n, \K) \mid \transpose{M}JM=J \}$$
     où $J = \begin{pmatrix} 0 & I_n \\ -I_n & 0 \end{pmatrix}$ est la matrice symplectique standard et de dimension réelle $n(2n+1)$ si $\K = \R$, et $2n(2n+1)$ si
   $\K = \C$.
@@ -74,7 +74,7 @@
 
 \begin{definition}
   Un champ de vecteurs $X \in \Gamma(TG)$ est dit
-  \emphindex{invariant à gauche} si
+  \emph{invariant à gauche} si
   $$(L_g)_* X = X \qquad \forall g \in G.$$
   c'est-à-dire si $d(L_g)_h(X_h) = X_{gh}$ pour tous $g, h \in G$.
   On note $\mathcal{L}(G)$ l'espace des champs de vecteurs invariant à gauche.
@@ -84,8 +84,9 @@
   $\mathcal{L}(G)$ est une sous-algèbre de Lie de $\Gamma(TG)$.
 \end{proposition}
 
-Comme $d(L_g)_h : T_h G \to T_{gh} G$ est un isomorphisme d'espaces vectoriels, un champ invariant à gauche est entièrement déterminé par sa valeur en $e$. Pour tout $v \in T_e G$, il existe un unique champ de vecteurs invariant à gauche $v^\sharp$ tel que $(v^\sharp)_e = v$, donné explicitement par $v^\sharp(g) = d(L_g)_e\, v$. Ainsi, l'application $.^\sharp : v \mapsto v^\sharp$ est un isomorphisme d'espaces vectoriels entre $T_e G$ et $\mathcal{L}(G)$.
+\omitted
 
+Comme $d(L_g)_h : T_h G \to T_{gh} G$ est un isomorphisme d'espaces vectoriels, un champ invariant à gauche est entièrement déterminé par sa valeur en $e$. Pour tout $v \in T_e G$, il existe un unique champ de vecteurs invariant à gauche $v^\sharp$ tel que $(v^\sharp)_e = v$, donné explicitement par $v^\sharp(g) = d(L_g)_e\, v$. Ainsi, l'application $.^\sharp : v \mapsto v^\sharp$ est un isomorphisme d'espaces vectoriels entre $T_e G$ et $\mathcal{L}(G)$.
 
 \begin{definition}
     L'\emph{algèbre de Lie associée au groupe de Lie $G$} est $T_e G$ désormais noté $\mathfrak{g}$ munie de l'unique structure d'algèbre de Lie faisant de l'isomorphisme d'espace vectoriel $.^\sharp$ un isomorphisme d'algèbres Lie. C'est à dire que sur $\mathfrak{g}$ le crochet de Lie est définie par 
@@ -97,3 +98,59 @@ Comme $d(L_g)_h : T_h G \to T_{gh} G$ est un isomorphisme d'espaces vectoriels, 
   $$T_e\varphi : \mathfrak{g} \longrightarrow \mathfrak{h}$$
   est un morphisme d'algèbres de Lie.
 \end{proposition}
+
+\omitted
+
+\section{Exponentielle de Lie}
+
+\begin{definition}
+  Un \emph{sous-groupe à un paramètre} est un morphisme de groupes de Lie $\gamma: \R \to G$.
+\end{definition}
+
+\begin{proposition}
+  Soit $X\in \mathfrak{g}$, il existe un unique sous-groupe à un paramètre $\gamma_X$ tel que $\gamma_X'(0) = X$.
+\end{proposition}
+
+\omitted
+
+\begin{definition}
+  L'\emph{exponentielle de Lie} $\exp: \mathfrak{g} \to G$ est définie pour $X\in \mathfrak{g}$ par 
+  $$\exp(X) = \gamma_X(1)$$
+\end{definition}
+
+\begin{proposition}
+  On a :
+  \ilist{
+    \item $\exp((s+t)X) = \exp(sX)\exp(tX)$
+    \item $\exp(-X) = \exp(X)^{-1}$
+    \item $T_0 \exp = \id_\mathfrak{g}$
+  }
+\end{proposition}
+
+\omitted
+
+\begin{corollary}
+  L'exponentielle de Lie est un difféomorphisme local en $0$.
+\end{corollary}
+
+\omitted
+
+\begin{theorem}
+  Soit $\varphi: G \to H$ un morphisme de groupes de Lie, alors on dispose du diagramme commutatif suivant
+  \begin{diag}
+    \mathfrak{g} \arrow[r, "T_e\varphi"] \arrow[d, "\exp"] & \mathfrak{h} \arrow[d, "\exp"] \\
+    G \arrow[r, "\varphi"] & H
+  \end{diag}
+\end{theorem}
+
+\omitted
+
+\begin{proposition}
+  Pour $G \subset \GL(n, \K)$ l'exponentielle de Lie coïncide avec l'exponentielle matricielle.
+\end{proposition}
+
+\omitted
+
+\section{Correspondance de Lie}
+
+\section{Groupes de Lie compacts}

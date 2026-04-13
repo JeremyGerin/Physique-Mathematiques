@@ -7,6 +7,7 @@
 \DeclareMathOperator{\End}{End}
 \DeclareMathOperator{\ad}{ad}
 \DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\id}{id}
 \DeclareMathOperator{\rad}{\mathcal{R}}
 \DeclareMathOperator{\Img}{Im}
 \DeclareMathOperator{\Der}{Der}
@@ -23,12 +24,16 @@
   \end{enumerate}%
 }
 
-% Index + Emphase
-\newcommand{\emphindex}[1]{\emph{#1}\index{#1}}
-
-%Chapitre
+% Chapitre
 \newcommand{\chapitre}[1]{
   \chapter{#1}
   \minitoc
   \newpage}
+
+% Preuve omise
+\newcommand{\omitted}{
+  \begin{proof}
+    Omise.
+  \end{proof}
+}
 
