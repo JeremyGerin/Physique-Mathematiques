@@ -84,21 +84,28 @@ théorie des noeuds, cobordisme, tangles
 
 ## Partie 8 - Théorie de Lie
 ### Chapitre 34 - Algèbres de Lie
-- **Généralités** : algèbres de Lie, morphismes, sous-algèbres, idéaux, algèbres abéliennes, centre
-- **Quotients et théorèmes d'isomorphismes** : algèbre quotient, théorème de factorisation, théorèmes d'isomorphismes
-- **Somme directe** : définition, propriétés universelles, associativité
-- **Dérivations** : dérivations d'une algèbre bilinéaire, algèbre de Lie des dérivations, représentation adjointe, dérivations intérieures
-- **Algèbres de Lie linéaires** : $\mathfrak{gl}$, $\mathfrak{sl}$, $\mathfrak{sp}$, $\mathfrak{so}$, $\mathfrak{o}$, $\mathfrak{u}$, $\mathfrak{su}$
-- **Nilpotence** : série centrale descendante, théorème d'Engel
-- **Résolubilité** : série dérivée, radical, théorème de Lie , critère de Cartan 
-- **Semi-simplicité** : algèbres simples et semi-simples, forme de Killing, décomposition en idéaux simples
+- **Généralités :** algèbre de Lie, morphismes d'algèbres de Lie, sous-algèbre de Lie, algèbre de Lie quotient, théorèmes d'isomorphisme, somme directe d'algèbres de Lie, algèbre de Lie des dérivations, réduction et extension des scalaires, algèbres de Lie linéaires ($\mathfrak{gl}(n, \mathbb{K})$, $\mathfrak{sl}(n, \mathbb{K})$, $\mathfrak{sp}(2n, \mathbb{K})$, $\mathfrak{o}(n)$, $\mathfrak{so}(n)$, $\mathfrak{o}(p, q)$, $\mathfrak{so}(p, q)$, $\mathfrak{u}(n)$, $\mathfrak{su}(n)$)
+- **Algèbre de Lie nilpotente :** algèbre de Lie nilpotente, théorème d'Engel
+- **Algèbre de Lie résoluble :** algèbre de Lie résoluble, théorème de Lie, critère de Cartan
+- **Algèbre de Lie semi-simple :** algèbre de Lie simple et semi-simple, forme de Killing, sous-algèbre de Cartan, décomposition de Cartan, racines
 
 ### Chapitre 35 - Groupes de Lie
-groupes de Lie, exponentielles, algèbre de Lie associée, groupes de Lie compacts
+- **Généralités :** groupes de Lie, morphismes de groupes de Lie, groupes de Lie linéaires ($GL(n, \mathbb{K})$, $SL(n, \mathbb{K})$, $Sp(2n, \mathbb{K})$, $O(n)$, $SO(n)$, $O(p, q)$, $SO(p, q)$, $U(n)$, $SU(n)$)
+- **Algèbre de Lie d'un groupe de Lie :** champs de vecteurs invariant à gauche, espace tangent en l'élément neutre
+- **Exponentielle de Lie :** sous-groupes à un paramêtre, exponentielle de Lie
+- **Correspondance de Lie :**
+- **Groupes de Lie compacts :**
+
 ### Chapitre 36 - Représentations de groupes et d'algèbres de Lie
-lien entre représentation d'algèbres et de groupes de Lie, $\mathfrak{g}$-modules, représentations de SU(2), SU(3), groupe de Poincaré
+- **Généralités :** représentation de groupes de Lie, représentations d'algèbre de Lie, $\mathfrak{g}$-modules, représentation somme directe, représentation tensorielle, représentation duale, irreductibilité
+- **Classification des représentations irréductibles des groupes de Lie connexes et simplement connexes :** bijection à équivalence de représentation entre {rep irr de G} et {rep irr de $\mathfrak{g}$}, bijection entre {rep irr de $\mathfrak{g}$} et {rep irr de $\mathfrak{g}^\mathbb{C}$}
+- **Classification des représentations irréductibles des algèbres de Lie semi-simple :** poids, théorème de Weyl, action des $\mathfrak{sl}(2, \mathbb{C})$-triplets, poids dominant, théorème du poids dominant
+- **Exemples utiles :**
+
 ### Chapitre 37 - Classification des algèbres de Lie semi-simples
-système de racines, diagrammes de Dynkin, classification $A_n$, $B_n$, $C_n$, $D_n$ et exceptionnelles 
+- **Système de racines :** racines simple, chambre de Weyl, groupe de Weyl
+- **Diagramme de Dynkin :** matrice de Cartan, diagramme de Dynkin, classification des diagramme connexes
+- **Classification complête :**
 
 ## Partie 9 - Théorie des catégories
 ### Chapitre 38 - Théorie des catégories
