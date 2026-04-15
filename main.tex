@@ -3,6 +3,7 @@
 \input{preamble/packages.tex}
 \input{preamble/macros.tex}
 \input{preamble/environments.tex}
+\input{preamble/bibliography.tex}
 
 \title{Recueil de notes en Physique-Mathématiques}
 \author{Jérémy Gerin}
@@ -19,9 +20,11 @@
   \mainmatter
 
   \part{Théorie de Lie}
-  \input{content/lie_algebras.tex}
-  \input{content/lie_groups.tex}
+  \input{content/lie-algebras.tex}
+  \input{content/lie-groups.tex}
+  \input{content/lie-representations.tex}
+  \input{content/lie-classification.tex}
 
   \backmatter
-  \printbibliography
+  \printbibliography[heading=bibintoc]
 \end{document}
