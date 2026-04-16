@@ -92,15 +92,15 @@ théorie des noeuds, cobordisme, tangles
 ### Chapitre 35 - Groupes de Lie
 - **Généralités :** groupes de Lie, morphismes de groupes de Lie, groupes de Lie linéaires ($GL(n, \mathbb{K})$, $SL(n, \mathbb{K})$, $Sp(2n, \mathbb{K})$, $O(n)$, $SO(n)$, $O(p, q)$, $SO(p, q)$, $U(n)$, $SU(n)$)
 - **Algèbre de Lie d'un groupe de Lie :** champs de vecteurs invariant à gauche, espace tangent en l'élément neutre
-- **Exponentielle de Lie :** sous-groupes à un paramêtre, exponentielle de Lie
+- **Exponentielle de Lie :** sous-groupes à un paramêtre, aloexponentielle de Lie
 - **Correspondance de Lie :**
 - **Groupes de Lie compacts :**
 
 ### Chapitre 36 - Représentations de groupes et d'algèbres de Lie
-- **Généralités :** représentation de groupes de Lie, représentations d'algèbre de Lie, $\mathfrak{g}$-modules, représentation somme directe, représentation tensorielle, représentation duale, irreductibilité
+- **Généralités :** représentation de groupes de Lie, représentations d'algèbre de Lie, $\mathfrak{g}$-modules, représentation somme directe, représentation tensorielle, représentation duale, irreductibilité, lemme de Shur
 - **Classification des représentations irréductibles des groupes de Lie connexes et simplement connexes :** bijection à équivalence de représentation entre {rep irr de G} et {rep irr de $\mathfrak{g}$}, bijection entre {rep irr de $\mathfrak{g}$} et {rep irr de $\mathfrak{g}^\mathbb{C}$}
 - **Classification des représentations irréductibles des algèbres de Lie semi-simple :** poids, théorème de Weyl, action des $\mathfrak{sl}(2, \mathbb{C})$-triplets, poids dominant, théorème du poids dominant
-- **Exemples utiles :**
+- **Exemples utiles pour la Physique:** $SU(2)$, $SU(3)$, $SO(3)$, groupe de Poincaré
 
 ### Chapitre 37 - Classification des algèbres de Lie semi-simples
 - **Système de racines :** racines simple, chambre de Weyl, groupe de Weyl

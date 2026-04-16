@@ -1,1 +1,119 @@
 \chapitre{Représentations de groupes et d'algèbres de Lie}
+
+Dans tout ce chapitre, sauf mention explicite du contraire, toute représentation est complexe et de dimension finie.
+
+\section{Généralités}
+
+\subsection{Représentations de groupes de Lie}
+
+\begin{definition}
+    Soit $G$ un groupe de Lie. Une \emph{représentation} de $G$ est la donnée $(\rho, V)$, d'un $\K$-espace vectoriel V et d'un morphisme de groupes de Lie $\rho : G \to GL(V)$. \\
+    Elle est dite \emph{de dimension finie} si $V$ l'est, complexe (resp. réelle) si $\K = \C$ (resp. $\K = \R$).
+\end{definition}
+
+\begin{definition}
+    Soit $G$ un groupe de Lie et $(\rho, V)$, $(\sigma, W)$ deux représentations de $G$. Un \emph{morphisme de représentation} est une application linéaire $f: V \to W$ tel que pour tout $g\in G$ le diagramme suivant comute 
+    \begin{diag}
+        V \arrow[d, "f"] \arrow[r, "\rho(g)"] & V \arrow[d, "f"] \\
+        W \arrow[r, "\sigma(g)"] & W
+    \end{diag}
+    Deux représentations sont dites \emph{équivalentes} s'il existe un isomorphisme de représentations entre elles.
+\end{definition}
+
+\begin{definition}
+    Soit $G$ un groupe de Lie et $(\rho, V)$, $(\sigma, W)$ deux représentations de G. 
+    \ilist{
+        \item la représentation \emph{somme directe} est la représentation $(\rho \oplus \sigma, V \oplus W)$ définie par 
+        $$(\rho \oplus \sigma)(g).(v+w) = \rho(g).v  + \sigma(g).w$$
+        \item la représentation \emph{produit tensoriel} est la représentation $(\rho \otimes \sigma, V \otimes W)$ définie par linéarité sur les tenseurs purs par
+        $$(\rho \otimes \sigma)(g).(v\otimes w) = (\rho(g).v)\otimes(\sigma(g).w)$$
+        \item la représentation \emph{duale} est la représentation $(\rho^*, V^*)$ définie par 
+        $$\rho^*(g).\ell = \ell \circ \rho(g^{-1})$$
+    }
+\end{definition}
+
+\begin{definition}
+    Soit $G$ un groupe de Lie et $(\rho, V)$ une représentation de $G$. Un \emph{sous-espace stable} est un sous-espace vectoriel $W$ de $V$ stable par tous les endomorphisme $\rho(g)$ pour tout $g\in G$. \\
+    Une représentation est dite \emph{irreductible} si ses seuls sous-espaces stables sont $0$ et $V$. \\
+    Une représentation est dite \emph{completement réductible} si elle est somme directe finie de représentations irréductibles.
+\end{definition}
+
+\begin{lemma}
+    Soit $G$ un groupe de Lie. Alors,
+    \ilist{
+        \item tout morphisme non nul de représentations irreductibles de $G$ est un isomorphisme.
+        \item tout endomorphisme de représentation irreductible de $G$ est une homothétie.
+    }
+\end{lemma}
+
+\subsection{Représentations d'algèbres de Lie}
+
+\begin{definition}
+    Soit $\mathfrak{g}$ une algèbre de Lie. Une \emph{représentation} de $\mathfrak{g}$ est la donnée $(\rho, V)$, d'un $\K$-espace vectoriel V et d'un morphisme d'algèbres de Lie $\rho : \mathfrak{g} \to \mathfrak{gl}(V)$. \\
+    Elle est dite \emph{de dimension finie} si $V$ l'est, complexe (resp. réelle) si $\K = \C$ (resp. $\K = \R$).
+\end{definition}
+
+\begin{definition}
+    Soit $\mathfrak{g}$ une algèbre de Lie et $(\rho, V)$, $(\sigma, W)$ deux représentations de $\mathfrak{g}$. Un \emph{morphisme de représentation} est une application linéaire $f: V \to W$ tel que pour tout $X\in \mathfrak{g}$ le diagramme suivant comute 
+    \begin{diag}
+        V \arrow[d, "f"] \arrow[r, "\rho(X)"] & V \arrow[d, "f"] \\
+        W \arrow[r, "\sigma(X)"] & W
+    \end{diag}
+    Deux représentations sont dites \emph{équivalentes} s'il existe un isomorphisme de représentations entre elles.
+\end{definition}
+
+\begin{definition}
+    Soit $\mathfrak{g}$ une algèbre de Lie et $(\rho, V)$, $(\sigma, W)$ deux représentations de $\mathfrak{g}$.
+    \ilist{
+        \item la représentation \emph{somme directe} est la représentation $(\rho \oplus \sigma, V \oplus W)$ définie par 
+        $$(\rho \oplus \sigma)(X).(v+w) = \rho(X).v  + \sigma(X).w$$
+        \item la représentation \emph{produit tensoriel} est la représentation $(\rho \otimes \sigma, V \otimes W)$ définie par linéarité sur les tenseurs purs par
+        $$(\rho \otimes \sigma)(X).(v\otimes w) = (\rho(X).v)\otimes w + v \otimes (\sigma(X).w)$$
+        \item la représentation \emph{duale} est la représentation $(\rho^*, V^*)$ définie par 
+        $$\rho^*(X).\ell = - \ell \circ \rho(X)$$
+    }
+\end{definition}
+
+\begin{definition}
+    Soit $\mathfrak{g}$ une algèbre de Lie et $(\rho, V)$ une représentation de $\mathfrak{g}$. Un \emph{sous-espace stable} est un sous-espace vectoriel $W$ de $V$ stable par tous les endomorphisme $\rho(X)$ pour tout $X\in \mathfrak{g}$. \\
+    Une représentation est dite \emph{irreductible} si ses seuls sous-espaces stables sont $0$ et $V$. \\
+    Une représentation est dite \emph{completement réductible} si elle est somme directe finie de représentations irréductibles.
+\end{definition}
+
+\begin{lemma}
+    Soit $\mathfrak{g}$ une algèbre de Lie. Alors,
+    \ilist{
+        \item tout morphisme non nul de représentations irreductibles de $\mathfrak{g}$ est un isomorphisme.
+        \item tout endomorphisme de représentation irreductible de $\mathfrak{g}$ est une homothétie.
+    }
+\end{lemma}
+
+\section{Correspondance entre représentations}
+
+\subsection{Correspondance entre représentations de groupes et d'algèbres de Lie}
+
+\begin{definition}
+    Soit $G$ un groupe de Lie et $(\rho, V)$ une représentation de $G$. La \emph{représentation tangente} de $\rho$, notée $T\rho$, est la représentation d'algèbres de Lie $T_e\rho: \mathfrak{g} \to \mathfrak{gl}(V)$.
+\end{definition}
+
+\begin{theorem}
+    Soit $G$ un groupe de Lie connexe alors l'application qui à une représentation $(\rho, V)$ de $G$ associe la représentation $(T\rho, V)$ de $\mathfrak{g}$ induit une injection de l'ensemble des classes d'équivalences de représentations irréductibles du groupe de Lie $G$ dans l'ensemble des classes d'équivalences de représentation irréductibles de l'algèbre de Lie $\mathfrak{g}$. \\
+    Si de plus $G$ est simplement connexe, alors cette injection est une bijection.
+\end{theorem}
+
+\omitted
+
+\subsection{Correspondance entre représentation d'une algèbre de Lie réelle et de sa complexifiée}
+
+\begin{definition}
+    Soit $\mathfrak{g}$ une algèbre de Lie réelle et $(\rho, V)$ une représentation de $\mathfrak{g}$. La représentation \emph{complexifiée} de $\rho$, notée $\rho^\C$ est la représentation de l'algèbre de Lie $\mathfrak{g}^\C$ définie par 
+    $$\rho^\C(X+iY).v = \rho(X).v + i \rho(Y).v$$
+\end{definition}
+
+\begin{theorem}
+    L'application $(\rho, V) \longmapsto (\rho^\C, V)$ induit une bijection entre les classes d'équivalences de représentations irréductibles de $\mathfrak{g}$ et celles de $\mathfrak{g}^\C$.
+\end{theorem}
+
+\omitted
+
+\section{Représentations d'algèbres de Lie complexes semi-simple}
