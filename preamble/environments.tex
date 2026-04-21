@@ -7,6 +7,8 @@
 % Style définition (différent du style théorème)
 \theoremstyle{definition}
 \newtheorem*{definition}{Définition}
+
+\theoremstyle{remark}
 \newtheorem*{example}{Exemple}
 \newtheorem*{remark}{Remarque}
 
@@ -21,3 +23,8 @@
     epi/.style={->>},
     iso/.style={"\sim"{above}},
 }
+
+% Listes (i); (ii); ... 
+\newenvironment{ilist}
+  {\begin{enumerate}[label=(\roman*), left=0pt, itemsep=2pt]}
+  {\end{enumerate}}

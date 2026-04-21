@@ -1,31 +1,67 @@
 \chapitre{Algèbres de Lie}
 
 \noindent
-Dans tout ce chapitre, soit $\K$ désigne $\R$ ou $\C$.
+Dans tout ce chapitre, soit $\K$ désigne $\R$ ou $\C$. \\
+
+Les algèbres de matrices $\mathcal{M}(n, \K)$ sont muni de la multiplication matricielle qui n'est en général, non-commutative. Ainsi il est intéressant de considérer le commutateur $[X, Y] = XY-YX$ qui mesure ce défaut de commutativité. Il est bilinéaire, antisymétrique et vérifie l'identité de Jacobi mais il n'est ni associatif ni compatible avec la structure multiplicative de l'algèbre. Une algèbre de Lie est précisément l'abstraction de cette structure : un espace vectoriel muni d'un crochet bilinéaire, antisymétrique et vérifiant l'identité de Jacobi, sans nécéssairement de structure d'algèbre sous-jacente. \\
  
 \section{Généralités}
 \subsection{Définitions et premières propriétés}
 
 \begin{definition}
     Une \emph{algèbre de Lie} $\mathfrak{g}$ est un $\K$-espace vectoriel munie d'une application bilinéaire $\mathfrak{g}\times \mathfrak{g} \to \mathfrak{g}$, notée $(x,y) \mapsto [x, y]$ et appelée \emph{crochet de Lie}, vérifiant:
-    \ilist{
-        \item anticomutativité\footnote{si le corps est de caractéristique différente de $2$, cet axiome est équivalent à demander que $\forall x \in \mathfrak{g}, \quad [x,x] = 0$}: $\forall x, y \in \mathfrak{g}, \quad [x, y] = - [y, x]$
+    \begin{ilist}
+        \item antisymétrie\footnote{si le corps est de caractéristique différente de $2$, cet axiome est équivalent à demander que $\forall x \in \mathfrak{g}, \quad [x,x] = 0$}: $\forall x, y \in \mathfrak{g}, \quad [x, y] = - [y, x]$
         \item identité de Jacobi\index{identité de Jacobi}: $\forall x, y, z \in \mathfrak{g}, \quad [x, [y, z]] + [y, [z, x]] + [z, [x, y]] = 0$
-    }
+    \end{ilist}
 \end{definition}
+
+Les principales algèbres de Lie qui nous intéresseront sont des algèbres de Lie dites \emph{matricielles} c'est à dire des sous-algèbres de Lie de $\mathcal{M}(n, \K)$ munie du commutateur, qu'on notera dorénavant $\mathfrak{gl}(n, \K)$ pour insister sur sa structure d'algèbre de Lie et qu'on appelle l'\emph{algèbre de Lie générale linéaire}. De la même façon, pour $V$ un $\K$-espace vectoriel quelconque, on notera $\mathfrak{gl}(V)$ pour $\End(V)$\footnote{Si $V$ est de dimension finie $n$, l'identification naturelle des algèbres $\End(V)$ et $\mathcal{M}(n, \K)$ après un choix de base, induit canoniquement une identification naturelle des algèbres de Lie $\mathfrak{gl}(V)$ et $\mathfrak{gl}(n, \K)$.} muni du commutateur des endomorphismes d'espaces vectoriels. \\
+Ainsi on appelle 
+\begin{ilist}
+    \item \emph{algèbre de Lie spéciale linéaire} la sous-algèbre de Lie 
+    $$\mathfrak{sl}(n, \K) = \ker(\tr) = \{ X \in \mathfrak{gl}(n, \K) \mid \tr(X) = 0 \}$$
+    \item \emph{algèbre de Lie simplectique} la sous-algèbre de Lie 
+    $$\mathfrak{sp}(2n, \K) = \left\{ X \in \mathfrak{gl}(2n, \K) \mid \transpose{X} J + J X = 0 \right\}$$
+    où $J = \begin{pmatrix} 0 & I_n \\ -I_n & 0 \end{pmatrix}$ est la matrice symplectique standard.
+    \item \emph{algèbre de Lie orthogonale} ou \emph{spéciale orthogonale} la sous-algèbre de Lie réelle
+    $$\mathfrak{o}(n) = \mathfrak{so}(n) = \{ X \in \mathfrak{gl}(n, \mathbb{R}) \mid \transpose{X} + X = 0 \}$$
+    Plus généralement, pour une forme de signature\footnote{La convention choisie ici place les valeurs négatives en premier dans $I_{p,q}$. L'autre convention, qui place les valeurs positives en premier, est également répandue et donne une algèbre de Lie isomorphe.} $(p, q)$, on définit
+    $$\mathfrak{o}(p, q) = \mathfrak{so}(p, q) = \{ X \in \mathfrak{gl}(p+q, \mathbb{R}) \mid \transpose{X} I_{p,q} + I_{p,q} X = 0 \}$$
+    où $I_{p,q} = \begin{pmatrix} -I_p & 0 \\ 0 & I_q \end{pmatrix}$.
+    \item \emph{algèbre de Lie unitaire} la sous-algèbre de Lie réelle 
+    $$\mathfrak{u}(n) = \{ X \in \mathfrak{gl}(n, \C) \mid X^\dagger + X = 0 \}$$
+    où $X^\dagger = \transpose{{\overline{X}}}$ désigne le conjugué hermitien. 
+    \item \emph{algèbre de Lie spéciale unitaire} est la sous-algèbre de Lie réelle
+    $$\mathfrak{su}(n) = \{ X \in \mathfrak{u}(n) \mid \tr(X) = 0 \}$$
+\end{ilist}
 
 \begin{definition}
     Un \emph{morphisme d'algèbres de Lie} est une application linéaire $\varphi: \mathfrak{g} \to \mathfrak{h}$ telle que 
     $$\forall x, y \in \mathfrak{g}, \quad \varphi([x,y]) = [\varphi(x), \varphi(y)]$$
-    Un \emph{endomorphisme} est un morphisme d'une algèbre de Lie dans elle-même. \\
-    Un \emph{isomorphisme} est un morphisme bijectif. \\
-    Un \emph{automorphisme} est à la fois un endomorphisme et un isomorphisme.
 \end{definition}
+
+Un exemple fondamental de morphisme d'algèbres de Lie est la \emph{représentation adjointe} : pour tout $x\in \mathfrak{g}$ on définie l'application linéaire $\ad_x : \mathfrak{g} \to \mathfrak{g}$ par 
+$$\ad_x(y) = [x, y] \quad \forall y \in \mathfrak{g}$$
+Ainsi on définit l'application linéaire $\ad : \mathfrak{g} \to \mathfrak{gl}(\mathfrak{g})$ qui d'après l'identité de Jacobi est un morphisme d'algèbres de Lie.
+
+\begin{proposition}
+    Soit $\varphi : \mathfrak{g} \to \mathfrak{h}$ un morphisme d'algèbre de Lie bijectif. Alors $\varphi^{-1} : \mathfrak{h} \to \mathfrak{g}$ est un morphisme d'algèbre de Lie. 
+\end{proposition}
+
+\omitted
 
 \begin{definition}
     Une \emph{sous-algèbre de Lie} de $\mathfrak{g}$ est un sous-espace vectoriel $\mathfrak{h} \subset \mathfrak{g}$ stable par le crochet de Lie, c'est à dire :
     $$\forall x, y \in \mathfrak{h}, \quad [x,y] \in \mathfrak{h}$$ $\mathfrak{h}$ est donc une algèbre de Lie pour le crochet de Lie induit.
 \end{definition}
+
+\begin{definition}
+    Une \emph{algèbre de Lie abélienne} est une algèbre de Lie $\mathfrak{g}$ dont le crochet est identiquement nul :
+    $$\forall x, y \in \mathfrak{g}, \quad [x, y] = 0$$
+\end{definition}
+
+\subsection{Idéaux d'une algèbre de Lie}
 
 \begin{definition}
     Un \emph{idéal} de $\mathfrak{g}$ est un sous-espace vectoriel $I \subset \mathfrak{g}$ absorbant pour le crochet de Lie, c'est à dire :
@@ -34,18 +70,13 @@ Dans tout ce chapitre, soit $\K$ désigne $\R$ ou $\C$.
 
 \begin{proposition}
     Soit $\varphi: \mathfrak{g} \to \mathfrak{h}$ un morphisme d'algèbres de Lie.
-    \ilist{
+    \begin{ilist}
         \item L'image directe $\Img(\varphi)$ est une sous-algèbre de Lie de $\mathfrak{h}$.
         \item Le noyau $\ker(\varphi)$ est un idéal de $\mathfrak{g}$.
-    }
+    \end{ilist}
 \end{proposition}
 
 \omitted
-
-\begin{definition}
-    Une \emph{algèbre de Lie abélienne} est une algèbre de Lie $\mathfrak{g}$ dont le crochet est identiquement nul :
-    $$\forall x, y \in \mathfrak{g}, \quad [x, y] = 0$$
-\end{definition}
 
 \begin{definition}
     Le \emph{centre} d'une algèbre de Lie $\mathfrak{g}$ est le sous-espace vectoriel
@@ -58,7 +89,16 @@ Dans tout ce chapitre, soit $\K$ désigne $\R$ ou $\C$.
 
 \omitted
 
-\subsection{Algèbre de Lie quotient et théorèmes d'isomorphismes}
+\begin{definition}
+    Soit $\mathfrak{g}$ une algèbre de Lie et $\mathfrak{h}$ une sous-algèbre de Lie de $\mathfrak{g}$. Le \emph{normalisateur} de $\mathfrak{h}$ dans $\mathfrak{g}$ est la sous-algèbre de Lie 
+    $$\mathcal{N}_\mathfrak{g}(\mathfrak{h}) = \{x\in \mathfrak{g} \mid [x, h] \in \mathfrak{h} \quad \forall h\in \mathfrak{h}\}$$
+\end{definition}
+
+\begin{proposition}
+    Soit $\mathfrak{g}$ une algèbre de Lie et $\mathfrak{h}$ une sous-algèbre de Lie de $\mathfrak{g}$. Alors $\mathfrak{h}$ est un idéal de $\mathfrak{g}$ si et seulement si $\mathcal{N}_\mathfrak{g}(\mathfrak{h}) = \mathfrak{g}$.
+\end{proposition}
+
+\subsection{Algèbre de Lie quotient, théorèmes d'isomorphismes et extensions d'algèbres de Lie}
 
 \begin{definition}
     Soit $I$ un idéal de $\mathfrak{g}$. L'\emph{algèbre de Lie quotient} $\mathfrak{g}/I$ est le $\K$-espace vectoriel quotient muni du crochet de Lie
@@ -105,14 +145,22 @@ Dans tout ce chapitre, soit $\K$ désigne $\R$ ou $\C$.
     On la note $\mathfrak{g} \oplus \mathfrak{h}$.
 \end{definition}
 
-\begin{proposition}
+\begin{theorem}
     La somme directe $\mathfrak{g} \oplus \mathfrak{h}$ vérifie les propriétés universelles suivantes : pour toute algèbre de Lie $\mathfrak{k}$,
-    \ilist{
-        \item pour tout couple de morphismes $\varphi_1 : \mathfrak{k} \to \mathfrak{g}$ et $\varphi_2 : \mathfrak{k} \to \mathfrak{h}$, il existe un unique morphisme $\varphi : \mathfrak{k} \to \mathfrak{g} \oplus \mathfrak{h}$ tel que $\pi_1 \circ \varphi = \varphi_1$ et $\pi_2 \circ \varphi = \varphi_2$
-        \item pour tout couple de morphismes $\psi_1 : \mathfrak{g} \to \mathfrak{k}$ et $\psi_2 : \mathfrak{h} \to \mathfrak{k}$, il existe un unique morphisme $\psi : \mathfrak{g} \oplus \mathfrak{h} \to \mathfrak{k}$ tel que $\psi \circ \iota_1 = \psi_1$ et $\psi \circ \iota_2 = \psi_2$
-    }
+    \begin{ilist}
+        \item pour tout couple de morphismes $\varphi_1 : \mathfrak{k} \to \mathfrak{g}$ et $\varphi_2 : \mathfrak{k} \to \mathfrak{h}$, il existe un unique morphisme $\varphi : \mathfrak{k} \to \mathfrak{g} \oplus \mathfrak{h}$ tel que le diagramme suivant commute
+        \begin{diag}
+            \mathfrak{g} & \arrow[l, "\pi_1"'] \mathfrak{g}\oplus\mathfrak{h} \arrow[r, "\pi_2"] & \mathfrak{h} \\
+            & \arrow[lu, "\varphi_1"] \mathfrak{k} \arrow[ru, "\varphi_2"'] \arrow[u, dashed, "\phi"']& 
+        \end{diag}
+        \item pour tout couple de morphismes $\psi_1 : \mathfrak{g} \to \mathfrak{k}$ et $\psi_2 : \mathfrak{h} \to \mathfrak{k}$, il existe un unique morphisme $\psi : \mathfrak{g} \oplus \mathfrak{h} \to \mathfrak{k}$ tel que le diagramme suivant commute
+        \begin{diag}
+            \mathfrak{g} \arrow[r, "\iota_1"] \arrow[dr, "\psi_1"'] &  \mathfrak{g}\oplus\mathfrak{h} \arrow[d, dashed, "\psi"] & \arrow[l, "\iota_2"'] \mathfrak{h}  \arrow[dl, "\psi_2"] \\
+            & \mathfrak{k} & 
+        \end{diag}
+    \end{ilist}
     où $\pi_1, \pi_2$ sont les projections canoniques et $\iota_1, \iota_2$ les injections canoniques.
-\end{proposition}
+\end{theorem}
 
 \omitted
 
@@ -135,8 +183,8 @@ Dans tout ce chapitre, soit $\K$ désigne $\R$ ou $\C$.
 \begin{definition}
     Soit $A$ un $\K$-espace vectoriel muni d'une application bilinéaire $\mu : A \times A \to A$. Une \emph{dérivation} de $(A, \mu)$ est une application linéaire $\delta : A \to A$ vérifiant la règle de Leibniz :
     $$\delta(\mu(a,b)) = \mu(\delta(a), b) + \mu(a, \delta(b))$$
-    L'ensemble des dérivations de $A$ est noté $\Der(A)$. \\
-    Si $A$ est une $K$-algèbre, une dérivation de $A$ vérifie $$\delta(ab) = \delta(a)b + a\delta(b)$$
+    L'ensemble des dérivations de $A$ est noté $\Der_\mu(A)$. \\
+    Si $A$ est une $\K$-algèbre, une dérivation de $A$ vérifie $$\delta(ab) = \delta(a)b + a\delta(b)$$
     Si $\mathfrak{g}$ est une algèbre de Lie, une dérivation de $\mathfrak{g}$ vérifie 
     $$\delta([x,y]) = [\delta(x), y] + [x, \delta(y)]$$
 \end{definition}
@@ -146,13 +194,6 @@ Dans tout ce chapitre, soit $\K$ désigne $\R$ ou $\C$.
 \end{proposition}
 
 \omitted
-
-\begin{definition}
-    Soit $\mathfrak{g}$ une algèbre de Lie. Pour tout $x \in \mathfrak{g}$, la \emph{représentation adjointe} est le morphisme d'algèbres de Lie
-    $$\ad : \mathfrak{g} \to \mathfrak{gl}(\mathfrak{g})$$
-    défini par 
-    $$\ad(x)(y) = [x, y]$$
-\end{definition}
 
 \begin{proposition}
     Pour tout $x \in \mathfrak{g}$, $\ad x$ est une dérivation de $\mathfrak{g}$. Une telle dérivation est appelée \emph{dérivation intérieure}. Les dérivations intérieures forment un idéal de $\Der(\mathfrak{g})$, noté $\mathrm{Int}(\mathfrak{g})$.
@@ -183,42 +224,11 @@ Les constructions qui suivent sont spécifiques à l'inclusion $\R \hookrightarr
     $$\mathfrak{h}^\C \cong \mathfrak{g}$$
 \end{definition}
 
-\subsection{Algèbres de Lie linéaires}
+\section{Algèbres de Lie nilpotentes et résolubles}
 
-\begin{definition}
-    L'\emph{algèbre de Lie générale} est l'algèbre de Lie $\mathfrak{gl}(n, \K)$ des matrices carrées $\mathcal{M}(n, \K)$ munie du crochet de Lie
-    $$[X, Y] = XY - YX$$
-\end{definition}
 
-\begin{definition}
-    L'\emph{algèbre de Lie spéciale linéaire} est la sous-algèbre de Lie
-    $$\mathfrak{sl}(n, \K) = \ker(\tr) = \{ X \in \mathfrak{gl}(n, \K) \mid \tr(X) = 0 \}$$
-\end{definition}
 
-\begin{definition}
-    L'\emph{algèbre de Lie symplectique} est la sous-algèbre de Lie
-    $$\mathfrak{sp}(2n, \K) = \left\{ X \in \mathfrak{gl}(2n, \K) \mid \transpose{X} J + J X = 0 \right\}$$
-    où $J = \begin{pmatrix} 0 & I_n \\ -I_n & 0 \end{pmatrix}$ est la matrice symplectique standard.
-\end{definition}
-
-\begin{definition}
-    L'\emph{algèbre de Lie orthogonale} est la sous-algèbre de Lie réelle
-    $$\mathfrak{o}(n) = \mathfrak{so}(n) = \{ X \in \mathfrak{gl}(n, \mathbb{R}) \mid \transpose{X} + X = 0 \}$$
-    Plus généralement, pour une forme de signature\footnote{La convention choisie ici place les valeurs négatives en premier dans $I_{p,q}$. L'autre convention, qui place les valeurs positives en premier, est également répandue et donne une algèbre de Lie isomorphe.} $(p, q)$, on définit
-    $$\mathfrak{o}(p, q) = \mathfrak{so}(p, q) = \{ X \in \mathfrak{gl}(p+q, \mathbb{R}) \mid \transpose{X} I_{p,q} + I_{p,q} X = 0 \}$$
-    où $I_{p,q} = \begin{pmatrix} -I_p & 0 \\ 0 & I_q \end{pmatrix}$.
-\end{definition}
-
-\begin{definition}
-    L'\emph{algèbre de Lie unitaire} est l'algèbre de Lie réelle
-    $$\mathfrak{u}(n) = \{ X \in \mathfrak{gl}(n, \C) \mid X^\dagger + X = 0 \}$$
-    où $X^\dagger = \transpose{{\overline{X}}}$ désigne le conjugué hermitien. L'\emph{algèbre de Lie spéciale unitaire} est la sous-algèbre de Lie réelle
-    $$\mathfrak{su}(n) = \{ X \in \mathfrak{u}(n) \mid \tr(X) = 0 \}$$
-\end{definition}
-
-\section{Algèbre de Lie nilpotentes}
-
-\subsection{Définitions et premières propriétés}
+\subsection{Algèbres de Lie nilpotentes}
 
 \begin{definition}
     La \emph{série centrale descendante} d'une algèbre de Lie $\mathfrak{g}$ est la suite d'idéaux de $\mathfrak{g}$ définie par :
@@ -231,11 +241,11 @@ Les constructions qui suivent sont spécifiques à l'inclusion $\R \hookrightarr
 
 \begin{proposition}
     Soit $\mathfrak{g}$ une algèbre de Lie nilpotente.
-    \ilist{
+    \begin{ilist}
         \item Toute sous-algèbre de Lie de $\mathfrak{g}$ est nilpotente.
         \item Toute image directe de $\mathfrak{g}$ par un morphisme d'algèbres de Lie est nilpotente.
         \item Si $I$ est un idéal nilpotent de $\mathfrak{g}$ tel que $\mathfrak{g}/I$ est nilpotente, alors $\mathfrak{g}$ est nilpotente.
-    }
+    \end{ilist}
 \end{proposition}
 
 \omitted
@@ -249,9 +259,7 @@ Les constructions qui suivent sont spécifiques à l'inclusion $\R \hookrightarr
 
 \omitted
 
-\section{Algèbres de Lie résolubles}
-
-\subsection{Définitions et premières propriétés}
+\subsection{Algèbres de Lie résolubles}
 
 \begin{definition}
     La \emph{série dérivée} d'une algèbre de Lie $\mathfrak{g}$ est la suite d'idéaux de $\mathfrak{g}$ définie par :
@@ -264,12 +272,12 @@ Les constructions qui suivent sont spécifiques à l'inclusion $\R \hookrightarr
 
 \begin{proposition}
     Soit $\mathfrak{g}$ une algèbre de Lie résoluble.
-    \ilist{
+    \begin{ilist}
         \item Toute sous-algèbre de Lie de $\mathfrak{g}$ est résoluble.
         \item Toute image directe de $\mathfrak{g}$ par un morphisme d'algèbres de Lie est résoluble.
         \item Si $I$ est un idéal résoluble de $\mathfrak{g}$ tel que $\mathfrak{g}/I$ est résoluble, alors $\mathfrak{g}$ est résoluble.
         \item Si $I$ et $J$ sont deux idéaux résolubles de $\mathfrak{g}$, alors $I + J$ est résoluble.
-    }
+    \end{ilist}
 \end{proposition}
 
 \omitted
@@ -349,3 +357,31 @@ Les constructions qui suivent sont spécifiques à l'inclusion $\R \hookrightarr
 \end{proposition}
 
 \omitted
+
+\subsection{sous-algèbre de Cartan}
+
+\begin{definition}
+    Soit $\mathfrak{g}$ une algèbre de Lie. Une \emph{sous-algèbre de Cartan} est une sous-algèbre de Lie $\mathfrak{h}$ nilpotente et égale à son normalisateur.
+\end{definition}
+
+\begin{proposition}
+    Soit $\mathfrak{g}$ une algèbre de Lie complexe semi-simple. Alors les sous-algèbre de Cartan sont exactement les sous-algèbres abéliennes maximales formées d'éléments $\ad$-diagonalisables.
+\end{proposition}
+
+\omitted
+
+\subsection{Système de racines}
+
+Dans cette section soit $\mathfrak{g}$ une algèbre de Lie complexe semi-simple et soit $\mathfrak{h}$ une sous-algèbre de Cartan de $\mathfrak{g}$.
+
+\begin{proposition}
+    On dispose de la décomposition suivante 
+    $$\mathfrak{g} = \bigoplus_{\alpha \in \mathfrak{h}^*}\mathfrak{g}_\alpha$$
+    où $\mathfrak{g}_\alpha = \{x\in \mathfrak{g} \mid \ad_x(h) = \alpha(h)x \quad \forall h \in \mathfrak{h}\}$
+\end{proposition}
+
+\omitted
+
+\begin{definition}
+    On appelle \emph{racine} tout $\alpha \in \mathfrak{h}^*$ non nulle telle que $\mathfrak{g}_\alpha \neq 0$. On note $\Phi$ l'ensemble des racines de $\mathfrak{g}$.
+\end{definition}
