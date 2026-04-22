@@ -20,6 +20,12 @@
   \Crefname{subsection}{Sous-section}{Sous-sections}%
 }
 
+% --- Entêtes et pieds de pages
+\usepackage{scrlayer-scrpage}
+\clearpairofpagestyles
+\ohead{\leftmark} 
+\cfoot{\pagemark}
+
 % --- TOC locale ---
 \usepackage{minitoc}
 \mtcsettitle{minitoc}{Sommaire}

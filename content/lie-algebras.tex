@@ -45,6 +45,11 @@ Un exemple fondamental de morphisme d'algèbres de Lie est la \emph{représentat
 $$\ad_x(y) = [x, y] \quad \forall y \in \mathfrak{g}$$
 Ainsi on définit l'application linéaire $\ad : \mathfrak{g} \to \mathfrak{gl}(\mathfrak{g})$ qui d'après l'identité de Jacobi est un morphisme d'algèbres de Lie.
 
+\begin{definition}
+    Soit $\mathfrak{g}$ une algèbre de Lie. La \emph{forme de Killing} de $\mathfrak{g}$ est l'application $\kappa$ définie par:
+    $$\forall x, y\in \mathfrak{g}, \quad \kappa(x,y) = \tr(\ad_x \ad_y)$$
+\end{definition}
+
 \begin{proposition}
     Soit $\varphi : \mathfrak{g} \to \mathfrak{h}$ un morphisme d'algèbre de Lie bijectif. Alors $\varphi^{-1} : \mathfrak{h} \to \mathfrak{g}$ est un morphisme d'algèbre de Lie. 
 \end{proposition}
@@ -98,7 +103,7 @@ Ainsi on définit l'application linéaire $\ad : \mathfrak{g} \to \mathfrak{gl}(
     Soit $\mathfrak{g}$ une algèbre de Lie et $\mathfrak{h}$ une sous-algèbre de Lie de $\mathfrak{g}$. Alors $\mathfrak{h}$ est un idéal de $\mathfrak{g}$ si et seulement si $\mathcal{N}_\mathfrak{g}(\mathfrak{h}) = \mathfrak{g}$.
 \end{proposition}
 
-\subsection{Algèbre de Lie quotient, théorèmes d'isomorphismes et extensions d'algèbres de Lie}
+\subsection{Algèbre de Lie quotient et théorèmes d'isomorphismes}
 
 \begin{definition}
     Soit $I$ un idéal de $\mathfrak{g}$. L'\emph{algèbre de Lie quotient} $\mathfrak{g}/I$ est le $\K$-espace vectoriel quotient muni du crochet de Lie
@@ -224,9 +229,35 @@ Les constructions qui suivent sont spécifiques à l'inclusion $\R \hookrightarr
     $$\mathfrak{h}^\C \cong \mathfrak{g}$$
 \end{definition}
 
+\subsection{Extensions d'algèbres de Lie}
+
+\begin{definition}
+    Une \emph{extension} d'une algèbre de Lie $\mathfrak{k}$ par une algèbre de Lie $\mathfrak{h}$ est une algèbre de Lie $\mathfrak{g}$ telle qu'on ait la suite exacte courte d'algèbres de Lie
+    \begin{diag}
+    0 \arrow[r] & \mathfrak{h}  \arrow[r, "i"] & \mathfrak{g}  \arrow[r, "\pi"] & \mathfrak{k}  \arrow[r] & 0
+    \end{diag}
+    L'extension est dite \emph{triviale} s'il existe un isomorphisme $\varphi : \mathfrak{g} \to \mathfrak{h} \oplus \mathfrak{k}$ tel que le diagramme suivant commute
+    \begin{diag}
+        {} & {} & \mathfrak{g} \arrow[rd, "\pi"] \arrow[dd, "\varphi"] & {} & {} \\
+        0 \arrow[r] & \mathfrak{h} \arrow[ru, "i"] \arrow[dr, "\iota_1"'] &  & \mathfrak{k} \arrow[r] & 0 \\ 
+        & & \mathfrak{h}\oplus \mathfrak{k} \arrow[ur, "\pi_2"'] & &
+    \end{diag}
+    L'extension est dite \emph{scindée} s'il existe un morphisme $s : \mathfrak{k} \to \mathfrak{g}$ tel que 
+    \begin{diag}
+    0 \arrow[r] & \mathfrak{h}  \arrow[r, "i"] & \mathfrak{g}  \arrow[r, "\pi"] & \mathfrak{k}  \arrow[r]\arrow[l, dashed, "s", bend left] & 0
+    \end{diag}
+    L'extension est dite \emph{centrale} si $i(\mathfrak{h}) \subset \mathcal{Z}(\mathfrak{g})$.
+\end{definition}
+
+\begin{proposition}
+    Une extension tiviale est scindée.
+\end{proposition}
+
+\omitted
+
 \section{Algèbres de Lie nilpotentes et résolubles}
 
-
+Les deux premières classes d'algèbres de Lie que l'on considère sont les algèbres de Lie nilpotentes et résolubles. L'idée commune est de décrire des algèbres de Lie "presque abélienne" : ce sont exactement les algèbres de Lie qui s'obtiennent par extensions successives d'algèbres abéliennes. 
 
 \subsection{Algèbres de Lie nilpotentes}
 
@@ -240,11 +271,20 @@ Les constructions qui suivent sont spécifiques à l'inclusion $\R \hookrightarr
 \end{definition}
 
 \begin{proposition}
-    Soit $\mathfrak{g}$ une algèbre de Lie nilpotente.
-    \begin{ilist}
-        \item Toute sous-algèbre de Lie de $\mathfrak{g}$ est nilpotente.
-        \item Toute image directe de $\mathfrak{g}$ par un morphisme d'algèbres de Lie est nilpotente.
-        \item Si $I$ est un idéal nilpotent de $\mathfrak{g}$ tel que $\mathfrak{g}/I$ est nilpotente, alors $\mathfrak{g}$ est nilpotente.
+    Une algèbre de Lie $\mathfrak{g}$ est nilpotente si et seulement si elle s'obtient comme suite finie d'extensions centrales  d'algèbres de Lie abéliennes, c'est à dire s'il existe une suite finie croissante d'idéaux $(\mathfrak{g}_i)_{0 \leq i\leq k}$ avec $\mathfrak{g}_0 = \mathfrak{g}$ et $\mathfrak{g}_k = 0$ telle que 
+    \begin{diag}
+        0 \arrow[r] & \mathfrak{g}_{i+1} \arrow[r] & \mathfrak{g}_i \arrow[r] & \mathfrak{g}_i/\mathfrak{g}_{i+1} \arrow[r] & 0
+    \end{diag}
+    est une extension centrale avec $\mathfrak{g}_i/\mathfrak{g}_{i+1}$ abélienne.
+\end{proposition}
+
+\omitted
+
+\begin{proposition}
+    ~\begin{ilist}
+        \item Toute sous-algèbre de Lie d'une algèbre de Lie nilpotente est nilpotente.
+        \item Toute image directe d'une algèbre de Lie nilpotente par un morphisme d'algèbres de Lie est nilpotente.
+        \item Toute extension d'algèbres de Lie nilpotentes est nilpotente
     \end{ilist}
 \end{proposition}
 
@@ -252,9 +292,24 @@ Les constructions qui suivent sont spécifiques à l'inclusion $\R \hookrightarr
 
 \subsection{Théorème d'Engel}
 
+Le théorème d'Engel donne une caractérisation utile du caractère nilpotent d'une algèbre de Lie. Plutôt que de vérifier que la série centrale descendante s'annule à partir d'un rang, ce qui peut être fastidieux en pratique, il suffit de vérifier que chaque élément agit de manière nilpotente via la représentation adjointe. La démonstration repose sur l'existence d'un vecteur propre commun à tous les éléments de l'algèbre de Lie nilpotente.
+
+\begin{lemma}
+    Soit $X\in \mathfrak{gl}(V)$ un endomorphisme nilpotent. Alors $\ad_X$ est aussi nilpotent.
+\end{lemma}
+
+\omitted
+
+\begin{lemma}
+    Soit $\mathfrak{g}$ une sous-algèbre de Lie de $\mathfrak{gl}(V)$ formée d'éléments nilpotent et où $V$ est un $\K$-espace vectoriel non nul de dimension finie. Alors il existe un vecteur non nul $v\in V$ tel que 
+    $$X.v = 0 \quad \forall X \in \mathfrak{g}$$
+\end{lemma}
+
+\omitted
+
 \begin{theorem}
     Une algèbre de Lie $\mathfrak{g}$ est nilpotente si et seulement si 
-    $$\forall x\in \mathfrak{g}, \quad \ad x \quad \text{est nilpotent}$$ 
+    $$\forall x\in \mathfrak{g}, \quad \ad_x \quad \text{est nilpotent}$$ 
 \end{theorem}
 
 \omitted
@@ -271,12 +326,21 @@ Les constructions qui suivent sont spécifiques à l'inclusion $\R \hookrightarr
 \end{definition}
 
 \begin{proposition}
-    Soit $\mathfrak{g}$ une algèbre de Lie résoluble.
-    \begin{ilist}
-        \item Toute sous-algèbre de Lie de $\mathfrak{g}$ est résoluble.
-        \item Toute image directe de $\mathfrak{g}$ par un morphisme d'algèbres de Lie est résoluble.
-        \item Si $I$ est un idéal résoluble de $\mathfrak{g}$ tel que $\mathfrak{g}/I$ est résoluble, alors $\mathfrak{g}$ est résoluble.
-        \item Si $I$ et $J$ sont deux idéaux résolubles de $\mathfrak{g}$, alors $I + J$ est résoluble.
+    Une algèbre de Lie $\mathfrak{g}$ est résoluble si et seulement si elle s'obtient comme suite finie d'extensions d'algèbres de Lie abéliennes, c'est à dire s'il existe une suite finie croissante d'idéaux $(\mathfrak{g}^i)_{0 \leq i\leq k}$ avec $\mathfrak{g}^0 = \mathfrak{g}$ et $\mathfrak{g}^k = 0$ telle que 
+    \begin{diag}
+        0 \arrow[r] & \mathfrak{g}^{i+1} \arrow[r] & \mathfrak{g}^i \arrow[r] & \mathfrak{g}^i/\mathfrak{g}^{i+1} \arrow[r] & 0
+    \end{diag}
+    est une extension avec $\mathfrak{g}^i/\mathfrak{g}^{i+1}$ abélienne.
+\end{proposition}
+
+\omitted
+
+\begin{proposition}
+    ~\begin{ilist}
+        \item Toute sous-algèbre de Lie d'une algèbre de Lie résoluble est résoluble.
+        \item Toute image directe d'une algèbre de Lie résoluble par un morphisme d'algèbres de Lie est résoluble.
+        \item Toute extension d'algèbres de Lie résolubles est résolubles.
+        \item Toute sommes d'idéaux résolubles est résoluble.
     \end{ilist}
 \end{proposition}
 
@@ -294,25 +358,39 @@ Les constructions qui suivent sont spécifiques à l'inclusion $\R \hookrightarr
 
 \subsection{Théorème de Lie}
 
-\begin{theorem}
+Le théorème de Lie donne une trigonalisation simultanée des éléments de l'algèbre de Lie résoluble. À l'instar du théorème d'Engel, sa démonstration repose sur l'existence d'un vecteur propre commun.
+
+\begin{lemma}
     Soit $\mathfrak{g}$ une sous-algèbre de Lie complexe et résoluble de $\mathfrak{gl}(V)$ où $V$ est un $\C$-espace vectoriel non nul de dimension finie. Alors $V$ possède un vecteur propre commun à tous les élements de $\mathfrak{g}$
+\end{lemma}
+
+\omitted
+
+\begin{theorem}
+    Soit $\mathfrak{g}$ une sous-algèbre de Lie complexe et résoluble de $\mathfrak{gl}(V)$ où $V$ est un $\C$-espace vectoriel non nul de dimension finie. Alors les matrices des éléments de $\mathfrak{g}$ sont triangulaires supérieures. 
 \end{theorem}
 
 \omitted
 
 \subsection{Critère de Cartan}
 
+Ce critère donne une caractérisation pour vérifier la résolubilité d'une algèbre de Lie via l'annulation de sa forme de Killing. 
+
 \begin{theorem}
-    Soit $\mathfrak{g}$ une sous-algèbre de $\mathfrak{gl}(V)$, où $V$ est un $\K$-espace vectoriel de dimension finie, telle que $\tr(xy)=0$ pour tout $x\in [\mathfrak{g}, \mathfrak{g}]$ et tout $y\in\mathfrak{g}$. Alors $\mathfrak{g}$ est résoluble.
+    Soit $\mathfrak{g}$ une sous-algèbre de Lie complexe de $\mathfrak{gl}(V)$, où $V$ est un $\C$-espace vectoriel de dimension finie, telle que $\tr(xy)=0$ pour tout $x\in [\mathfrak{g}, \mathfrak{g}]$ et tout $y\in\mathfrak{g}$. Alors $\mathfrak{g}$ est résoluble.
 \end{theorem}
+
+\omitted
+
+\begin{corollary}
+    Soit $\mathfrak{g}$ une algèbre de Lie complexe telle que $\kappa(x, y) = 0$ pour tout $x \in [\mathfrak{g}, \mathfrak{g}]$ et tout $y \in \mathfrak{g}$. Alors $\mathfrak{g}$ est résoluble.
+\end{corollary}
 
 \omitted
 
 \section{Algèbres de Lie semi-simples}
 
 \subsection{Définitions et premières propriétés}
-
-\noindent Dans cette partie on suppose que $K$ est de caractéristique nulle.
 
 \begin{definition}
     Une \emph{algèbre de Lie simple} est une algèbre de Lie $\mathfrak{g}$ dont le centre est trivial et qui ne possède aucun idéal autres que $0$ et elle-même.
@@ -327,13 +405,6 @@ Les constructions qui suivent sont spécifiques à l'inclusion $\R \hookrightarr
 \end{proposition}
 
 \omitted
-
-\subsection{Forme de Killing}
-
-\begin{definition}
-    Soit $\mathfrak{g}$ une algèbre de Lie. La \emph{forme de Killing} de $\mathfrak{g}$ est l'application $\kappa$ définie par:
-    $$\forall x, y\in \mathfrak{g}, \quad \kappa(x,y) = \tr(\ad x \ad y)$$
-\end{definition}
 
 \begin{proposition}
     Soit $\mathfrak{g}$ une algèbre de Lie. Alors $\mathfrak{g}$ est semi-simple si et seulement si sa forme de Killing est non-dégénérée.
@@ -358,7 +429,7 @@ Les constructions qui suivent sont spécifiques à l'inclusion $\R \hookrightarr
 
 \omitted
 
-\subsection{sous-algèbre de Cartan}
+\subsection{Sous-algèbre de Cartan}
 
 \begin{definition}
     Soit $\mathfrak{g}$ une algèbre de Lie. Une \emph{sous-algèbre de Cartan} est une sous-algèbre de Lie $\mathfrak{h}$ nilpotente et égale à son normalisateur.
@@ -385,3 +456,4 @@ Dans cette section soit $\mathfrak{g}$ une algèbre de Lie complexe semi-simple 
 \begin{definition}
     On appelle \emph{racine} tout $\alpha \in \mathfrak{h}^*$ non nulle telle que $\mathfrak{g}_\alpha \neq 0$. On note $\Phi$ l'ensemble des racines de $\mathfrak{g}$.
 \end{definition}
+
