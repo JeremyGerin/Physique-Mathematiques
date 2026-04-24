@@ -232,25 +232,42 @@ Les constructions qui suivent sont spécifiques à l'inclusion $\R \hookrightarr
 \subsection{Extensions d'algèbres de Lie}
 
 \begin{definition}
-    Une \emph{extension} d'une algèbre de Lie $\mathfrak{k}$ par une algèbre de Lie $\mathfrak{h}$ est une algèbre de Lie $\mathfrak{g}$ telle qu'on ait la suite exacte courte d'algèbres de Lie
+    Une \emph{extension} d'une algèbre de Lie $\mathfrak{h}$ par une algèbre de Lie $\mathfrak{n}$ est une algèbre de Lie $\mathfrak{g}$ telle qu'on ait la suite exacte courte d'algèbres de Lie
     \begin{diag}
-    0 \arrow[r] & \mathfrak{h}  \arrow[r, "i"] & \mathfrak{g}  \arrow[r, "\pi"] & \mathfrak{k}  \arrow[r] & 0
+    0 \arrow[r] & \mathfrak{n}  \arrow[r, "i"] & \mathfrak{g}  \arrow[r, "\pi"] & \mathfrak{h}  \arrow[r] & 0
     \end{diag}
-    L'extension est dite \emph{triviale} s'il existe un isomorphisme $\varphi : \mathfrak{g} \to \mathfrak{h} \oplus \mathfrak{k}$ tel que le diagramme suivant commute
+    L'extension est dite \emph{triviale} s'il existe un isomorphisme $\varphi : \mathfrak{g} \to \mathfrak{n} \oplus \mathfrak{h}$ tel que le diagramme suivant commute
     \begin{diag}
         {} & {} & \mathfrak{g} \arrow[rd, "\pi"] \arrow[dd, "\varphi"] & {} & {} \\
-        0 \arrow[r] & \mathfrak{h} \arrow[ru, "i"] \arrow[dr, "\iota_1"'] &  & \mathfrak{k} \arrow[r] & 0 \\ 
-        & & \mathfrak{h}\oplus \mathfrak{k} \arrow[ur, "\pi_2"'] & &
+        0 \arrow[r] & \mathfrak{n} \arrow[ru, "i"] \arrow[dr, "\iota_1"'] &  & \mathfrak{h} \arrow[r] & 0 \\ 
+        & & \mathfrak{n}\oplus \mathfrak{h} \arrow[ur, "\pi_2"'] & &
     \end{diag}
-    L'extension est dite \emph{scindée} s'il existe un morphisme $s : \mathfrak{k} \to \mathfrak{g}$ tel que 
+    L'extension est dite \emph{scindée} s'il existe un morphisme $s : \mathfrak{h} \to \mathfrak{g}$ tel que 
     \begin{diag}
-    0 \arrow[r] & \mathfrak{h}  \arrow[r, "i"] & \mathfrak{g}  \arrow[r, "\pi"] & \mathfrak{k}  \arrow[r]\arrow[l, dashed, "s", bend left] & 0
+    0 \arrow[r] & \mathfrak{n}  \arrow[r, "i"] & \mathfrak{g}  \arrow[r, "\pi"] & \mathfrak{h}  \arrow[r]\arrow[l, dashed, "s", bend left] & 0
     \end{diag}
-    L'extension est dite \emph{centrale} si $i(\mathfrak{h}) \subset \mathcal{Z}(\mathfrak{g})$.
+    L'extension est dite \emph{centrale} si $i(\mathfrak{n}) \subset \mathcal{Z}(\mathfrak{g})$.
 \end{definition}
 
 \begin{proposition}
     Une extension tiviale est scindée.
+\end{proposition}
+
+\omitted
+
+\subsection{Produit semi-direct d'algèbres de Lie}
+
+\begin{definition}
+    Soit $\mathfrak{h}$ et $\mathfrak{n}$ deux algèbres de Lie et soit $\phi: \mathfrak{h} \to \Der(\mathfrak{n})$ un morphisme d'algèbres de Lie. Le \emph{produit semi-direct} de $\mathfrak{n}$ par $\mathfrak{h}$ relativement à $\phi$ est l'algèbre de Lie $\mathfrak{n} \rtimes_\phi \mathfrak{h}$ définie sur le $\K$-espace vectoriel $\mathfrak{n} \times \mathfrak{h}$ par le crochet de Lie
+    $$[(n_1, h_1), (n_2, h_2)] = ([n_1, n_2]_{\mathfrak{n}} + \phi(h_1)(n_2) - \phi(h_2)(n_1), [h_1, h_2]_{\mathfrak{h}})$$
+\end{definition}
+
+\begin{proposition}
+    Une extension d'algèbre de Lie 
+    \begin{diag}
+    0 \arrow[r] & \mathfrak{n}  \arrow[r, "i"] & \mathfrak{g}  \arrow[r, "\pi"] & \mathfrak{h}  \arrow[r] & 0
+    \end{diag}
+    est scindée si et seulement si $\mathfrak{g} \cong \mathfrak{n} \rtimes_\phi \mathfrak{h}$ pour un certain $\phi$.
 \end{proposition}
 
 \omitted
@@ -353,7 +370,7 @@ Le théorème d'Engel donne une caractérisation utile du caractère nilpotent d
 \omitted
 
 \begin{definition}
-    Le \emph{radical} d'une algèbre de Lie $\mathfrak{g}$, noté $\rad(\mathfrak{g})$, est le plus grand idéal résoluble de $\mathfrak{g}$.
+    Le \emph{radical} d'une algèbre de Lie $\mathfrak{g}$, noté $\mathcal{R}(\mathfrak{g})$, est le plus grand idéal résoluble de $\mathfrak{g}$.
 \end{definition}
 
 \subsection{Théorème de Lie}
@@ -390,6 +407,8 @@ Ce critère donne une caractérisation pour vérifier la résolubilité d'une al
 
 \section{Algèbres de Lie semi-simples}
 
+La troisième classe d'algèbres de Lie qui nous intéresse sont les algèbres de Lie dites semi-simples. 
+
 \subsection{Définitions et premières propriétés}
 
 \begin{definition}
@@ -397,11 +416,11 @@ Ce critère donne une caractérisation pour vérifier la résolubilité d'une al
 \end{definition}
 
 \begin{definition}
-    une \emph{algèbre de Lie semi-simple} est une algèbre de Lie $\mathfrak{g}$ telle que $\rad(\mathfrak{g}) = 0$.
+    une \emph{algèbre de Lie semi-simple} est une algèbre de Lie $\mathfrak{g}$ telle que son radical $\mathcal{R}(\mathfrak{g})$ est nul.
 \end{definition}
 
 \begin{proposition}
-    Soit $\mathfrak{g}$ une algèbre de Lie. Alors $\mathfrak{g}/\rad(\mathfrak{g})$ est une algèbre de Lie semi-simple.
+    Soit $\mathfrak{g}$ une algèbre de Lie. Alors $\mathfrak{g}/\mathcal{R}(\mathfrak{g})$ est une algèbre de Lie semi-simple.
 \end{proposition}
 
 \omitted
@@ -416,6 +435,12 @@ Ce critère donne une caractérisation pour vérifier la résolubilité d'une al
     Soit $\mathfrak{g}$ une algèbre de Lie semi-simple. Alors toute dérivation de $\mathfrak{g}$ est intérieure :
     $$\Der(\mathfrak{g}) = \mathrm{Int}(\mathfrak{g})$$
 \end{proposition}
+
+\omitted
+
+\begin{theorem}
+    Soit $\mathfrak{g}$ une algèbre de Lie. Alors il existe une algèbre de Lie semi-simple $\mathfrak{h}$ telle que $\mathfrak{g} \cong \mathcal{R}(\mathfrak{g}) \rtimes \mathfrak{h}$.
+\end{theorem}
 
 \omitted
 
