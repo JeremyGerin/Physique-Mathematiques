@@ -3,7 +3,6 @@
 \input{preamble/packages.tex}
 \input{preamble/macros.tex}
 \input{preamble/environments.tex}
-\input{preamble/bibliography.tex}
 
 \title{Recueil de notes en Physique-Mathématiques}
 \author{Jérémy Gerin}
@@ -19,6 +18,7 @@
 
   \mainmatter
 
+  % --- Théorie de Lie ---
   \part{Théorie de Lie}
   \input{content/lie-intro.tex}
   \input{content/lie-algebras.tex}
@@ -27,5 +27,15 @@
   \input{content/lie-classification.tex}
 
   \backmatter
-  \printbibliography[heading=bibintoc]
+  % --- Bibliographie ---
+  \chapter*{Bibliographie}
+  \addcontentsline{toc}{chapter}{Bibliographie}
+  \foreach \i in {1,...,\value{chapidx}} {
+    \expanded{\noexpand\printbibliography[
+      segment=\csname chap@seg@\i\endcsname,
+      heading=subbibliography,
+      title={Chapitre \i : \csname chap@title@\i\endcsname}
+    ]
+    }
+  }
 \end{document}

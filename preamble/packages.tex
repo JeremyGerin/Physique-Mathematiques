@@ -42,10 +42,11 @@
 \usepackage[
   backend=biber,
   style=alphabetic,
-  sorting=nyt
+  sorting=nyt,
+  refsegment=chapter
 ]{biblatex}
 
-\addbibresource{bibliography/references.bib}
+\addbibresource{bibliography.bib}
 
 % --- Listes --- 
 \usepackage{enumitem}
@@ -53,3 +54,6 @@
 % --- Diagrammes --- 
 \usepackage{tikz-cd}
 \usetikzlibrary{babel}
+
+% --- Boucle for ---
+\usepackage{pgffor}

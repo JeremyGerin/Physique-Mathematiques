@@ -11,17 +11,17 @@
 \DeclareMathOperator{\id}{id}
 \DeclareMathOperator{\Img}{Im}
 \DeclareMathOperator{\Der}{Der}
-\DeclareMathOperator{\GL}{GL}
-\DeclareMathOperator{\SL}{SL}
-\DeclareMathOperator{\SO}{SO}
-\DeclareMathOperator{\SU}{SU}
-\DeclareMathOperator{\Sp}{Sp}
 
 % Chapitre
+\newcounter{chapidx}
 \newcommand{\chapitre}[1]{
   \chapter{#1}
+  \stepcounter{chapidx}
+  \expandafter\xdef\csname chap@title@\thechapidx\endcsname{#1}
+  \expandafter\xdef\csname chap@seg@\thechapidx\endcsname{\therefsegment}
   \minitoc
-  \newpage}
+  \newpage
+}
 
 % Preuve omise
 \newcommand{\omitted}{
