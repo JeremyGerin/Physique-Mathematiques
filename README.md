@@ -26,7 +26,7 @@ applications multilinéaires, produit tensoriel, algèbre exterieure, algèbre s
     - **Chapitre 8 - Espaces euclidiens & Formes quadratiques :**
 formes bilinéaires, produit scalaire, produit hermitien, adjoint, formes quadratiques, signature, classification des formes quadratiques
     - **Chapitre 9 - Réduction des endomorphismes :**
-$K[X]$-modules, polynôme minimal et caractéristiques, espaces propres, décomposition de Dunford, réduction de Jordan, théorème spectral en dimension finie
+$\mathbb{K}[X]$-modules, polynôme minimal et caractéristiques, espaces propres, décomposition de Dunford, réduction de Jordan, théorème spectral en dimension finie
 
 - **Partie 3 - Topologie**
     - **Chapitre 10 - Topologie générale :**
@@ -52,7 +52,7 @@ espace de probabilité, variables aléatoires, espérance, convergence, loi des 
     - **Chapitre 19 - Distributions :**
 espaces des fonctions tests, distributions, distributions tempérées, support d'une distribution, convolution
     - **Chapitre 20 - Analyse de Fourier :**
-transformée de Fourier dans S', cas L^1 et L^2, série de Fourier, théorème de Plancherel
+transformée de Fourier dans $S'$, cas $L^1$ et $L^2$, série de Fourier, théorème de Plancherel
 
 - **Partie 5 - Analyse fonctionnelle**
     - **Chapitre 21 - Equations différentielles :**
