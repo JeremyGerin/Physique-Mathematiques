@@ -14,3 +14,5 @@ $bibtex = 'biber %O %B';
 add_cus_dep('bib', 'bbl', 0, 'biber');
 
 $recorder = 1;
+
+$success_cmd = 'cp build/%B.pdf ./%B.pdf';
