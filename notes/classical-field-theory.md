@@ -2,10 +2,23 @@
 
 Quels aspects de théorie des champs peut-on présenter exclusivement dans le cas classique ?
 
-TODO:
+### TODO
 - Généraliser la correspondance entre connexions d'Ehresmann sur le fibré des repères et connexions affines sur le fibré tangent en une correspondance entre connexion d'Ehresmann sur un fibré principal et connexion affine sur une fibration associée quelconque
 - Introduire correctement les champs $\gamma^\mu(x)$ et $\sigma^\mu(x)$ sur $\mathcal{M}$ qui généralise les matrices $\gamma^\mu$ et $\sigma^\mu$ qui sont définis dans l'espace de Minkowski plat $\mathbb{R}^{1,3}$
 - Introduire les termes de masse de Majorana pour les neutrinos, permettant de donner une masse à un spineur de Weyl gauche sans introduire de spineur de Weyl droit indépendant.
+
+### Bibliographie 
+- Kobayashi & Nomizu, Foundations of Differential Geometry (vol. 1 & 2)
+- Husemoller, Fibre Bundles
+- Nakahara, Geometry, Topology and Physics
+- Bleecker, Gauge Theory and Variational Principles
+- Sontz, Principal Bundles: The Classical Case
+- Lawson & Michelsohn, Spin Geometry
+- Friedrich, Dirac Operators in Riemannian Geometry
+- Baez & Muniain, Gauge Fields, Knots and Gravity
+- Hamilton, Mathematical Gauge Theory
+- Chevalley, The Algebraic Theory of Spinors
+- Harvey, Spinors and Calibrations
 
 ## Fibrations
 
