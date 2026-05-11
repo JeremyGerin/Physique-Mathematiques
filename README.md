@@ -2,9 +2,23 @@
 
 Ce document a pour vocation à être un recueil le plus complet possible de tous les concepts mathématiques que j'ai pu croiser lors de mon cursus. L'objectif serait d'avoir le maximum de concepts définis proprement afin de pouvoir aller plus loin notament en Physique où l'on pourra présenter les théorie de la façon la plus "mathématiquement propre" possible. 
 
+L'idée est de débuter avec une écriture "en vrac" dans des fichiers .md (dans le dossier notes) dont l'objectif est de répondre à des questions précises. Dans un second temps, l'objectif sera d'organiser ces notes pour rédiger le document complet.
+
+## Questions
+
+- Peut-on reconstruire une surface à partir de ses formes fondamentales ?
+- Pourquoi les représentations physiquement pertinentes du groupe de Lorentz sont-elles les représentations de son revêtement universel $SL(2, \mathbb{C})$ ?
+- Pourquoi a-t-on besoin du formalisme des espaces de Hilbert en mécanique quantique, notamment la dimension infinie ?
+- En quoi les algèbres de Hopf (groupes quantiques) sont des "quantifications" de structures "classiques" ?
+- Que veut dire "quantifier" une théorie classique des champs ? 
+- Quel est le liens "quantique" entre TQFTs, Groupes quantiques, QFT ? 
+
+
 ## Plan général
 
-- **Partie 1 - Algèbre générale**
+Ce plan est à titre indicatif et est amené à changer au fur et à mesure de la progression du projet.
+
+- **Partie 1 - Algèbre générale (ALG)**
     - **Chapitre 0 - Théorie des ensembles :** 
 ensembles, fonctions, relations d'ordre, relation d'équivalences
     - **Chapitre 1 - Groupes :**
@@ -16,7 +30,7 @@ corps, extension de corps, corps de rupture, corps des fractions
     - **Chapitre 4 - Théorie de Galois :**
 groupe de Galois, correspondance de Galois, résolution par radicaux, classifications des corps finis
 
-- **Partie 2 - Algèbre linéaire**
+- **Partie 2 - Algèbre linéaire (LIN)**
     - **Chapitre 5 - Espaces vectoriels :**
 espaces vectoriels, applications linéaires, famille libre/génératrices, bases, dimension, matrices, théorème du rang
     - **Chapitre 6 - Dualité :**
@@ -28,7 +42,7 @@ formes bilinéaires, produit scalaire, produit hermitien, adjoint, formes quadra
     - **Chapitre 9 - Réduction des endomorphismes :**
 $\mathbb{K}[X]$-modules, polynôme minimal et caractéristiques, espaces propres, décomposition de Dunford, réduction de Jordan, théorème spectral en dimension finie
 
-- **Partie 3 - Topologie**
+- **Partie 3 - Topologie (TOP)**
     - **Chapitre 10 - Topologie générale :**
 espaces topologiques, ouvert/fermés, continuités, limites, suites, notation de Landau, homéomorphsismes, connexités, compacité, séparation
     - **Chapitre 11 - Espaces métriques :**
@@ -40,7 +54,7 @@ homotopie de chemins, groupe fondamental, théorème de van Kampen
     - **Chapitre 14 - Revêtements :**
 espaces de revêtements, relèvements, revêtements galoisiens, revêtement universel
 
-- **Partie 4 - Théorie de la mesure & analyse réelle**
+- **Partie 4 - Théorie de la mesure & analyse réelle (MES)**
     - **Chapitre 15 - Fonction de la variable réelle :**
 continuité, dérivabilité, classes de régularités, intégrale de Riemann, developpement de Taylor
     - **Chapitre 16 - Calcul différentiel :**
@@ -54,7 +68,7 @@ espaces des fonctions tests, distributions, distributions tempérées, support d
     - **Chapitre 20 - Analyse de Fourier :**
 transformée de Fourier dans $S'$, cas $L^1$ et $L^2$, série de Fourier, théorème de Plancherel
 
-- **Partie 5 - Analyse fonctionnelle**
+- **Partie 5 - Analyse fonctionnelle (FUN)**
     - **Chapitre 21 - Equations différentielles :**
 problème de Cauchy, théorème de Cauchy-Lispchitz, flots, système différentiels linéaires
     - **Chapitre 22 - Espaces de Hilbert :**
@@ -64,7 +78,7 @@ spectre et resolvante, opérateurs bornés et non bornées, domaine d'un opérat
     - **Chapitre 24 - Equations aux dérivées partielles :**
 semi-groupes d'opérateurs, théorème de Hille-Yosida
 
-- **Partie 6 - Analyse complexe et surfaces de Riemann**
+- **Partie 6 - Analyse complexe et surfaces de Riemann (HOL)**
     - **Chapitre 25 - Fonctions holomorphes :**
 fonctions holomorphes, équations de Cauchy-Riemann, intégrale de Cauchy, théorème de Cauchy, formule de Cauchy, série entière, théorème de Louville, principe du maximum
     - **Chapitre 26 - Fonctions méromorphes et résidus :**
@@ -72,7 +86,7 @@ pôles et singularités isolées, développement de Laurent, théorème des rés
     - **Chapitre 27 - Surfaces de Riemann :**
 surfaces de Riemann, théorème de Riemann-Roch 
 
-- **Partie 7 - Géométrie différentielle**
+- **Partie 7 - Géométrie différentielle (GEO)**
     - **Chapitre 28 - Variétés différentielles :**
 cartes et atlas, variétés lisses, applications lisses, sous-variétés, espace tangent, différentielle, fibré tangent & cotagent, champs de vecteurs, crochet de Lie, orientabilité
     - **Chapitre 29 - Fibrés :**
@@ -86,7 +100,7 @@ théorie de Morse, classification des surfaces orientables et non-orientable, ca
     - **Chapitre 33 - Théorie des noeuds, cobordisme et tangles :**
 théorie des noeuds, cobordisme, tangles
 
-- **Partie 8 - Théorie de Lie**
+- **Partie 8 - Théorie de Lie (LIE)**
     - **Chapitre 34 - Algèbres de Lie :** 
 algèbres de Lie, morphismes, idéaux, somme directe, produit semi-direct, extensions, quotient, algèbres de Lie nilpotentes, théorème d'Engel, algèbre de Lie résoluble, théorème de Lie, critère de Cartan, algèbre de Lie semi-simples, forme de Killing, décomposition de Lévi, sous-algèbre de Cartan, racines
     - **Chapitre 35 - Groupes de Lie :**
@@ -96,7 +110,7 @@ représentations de groupes et d'algèbres de Lie, lemme de Shur, représentatio
     - **Chapitre 37 - Classification des algèbres de Lie semi-simples :**
 système de racines, matrice de Cartan, diagramme de Dynkin, classification complête
 
-- **Partie 9 - Théorie des catégories**
+- **Partie 9 - Théorie des catégories (CAT)**
     - **Chapitre 38 - Théorie des catégories :**
 catégories, foncteurs, transformations naturelles, lemme de Yoneda, adjonction, propriétés universelles
     - **Chapitre 39 - Catégories tensorielles :**
@@ -104,14 +118,12 @@ catégories monoidales, catégories tressées, algèbres de Hopf, groupes quanti
     - **Chapitre 40 - TQFT :**
 cobordismes, TQFT, théories de Dijkgraaf-Witten
 
-- **Partie 10 - Physique**
-    - **Chapitre 41 - Mécanique classique :**
-principe de moindre action, formalisme lagrangien, formalisme hamiltonien, géométrie simplectique, crochets de Poisson, théorème de Noether
-    - **Chapitre 42 - Théories de jauges :**
-connexions comme champ de jauge, courbure comme tenseur de champ, transformation de jauges, théories de Yang-Mills, électromagnétisme
+- **Partie 10 - Physique (PHY)**
+    - **Chapitre 41 - Mécanique lagrangienne et hamiltonienne :**
+    - **Chapitre 42 - Relativité galliléenne et relativité restreinte :**
+principe de relativité, espace-temps affine, groupe de Gallilée, groupe de Lorentz  
     - **Chapitre 43 - Relativité générale :**
-variété lorentziennes, équations d'Einstein, géodésiques, solution exactes, linéarisations, ondes gravitationnelles
-    - **Chapitre 44 - Mécanique quantique :**
-algèbre d'observables, postulats de la mécanique quantique, équation de Schrodinger, représentation de Heisenberg et Schrodinger
+variétés lorentziennes, structure causale, connection de Lévi-Civita, équations d'Einstein, géodésiques, solutions exactes, linéarisation, ondes gravitationnelles
+    - **Chapitre 44 - Théorie classique des champs :**
+variété lorentziennes, fibré des repères et groupe de Lorentz, fibré de jauge, fibrations associées, actions (Einstein-Hilbert, Yang-Mills, couplage), brisure spontannée de symétrie et mécanisme de Higgs, modèle standard
     - **Chapitre 45 - Théorie quantique des champs :**
-théorie classique des champs, quantification canonique, intégrale de chemin, champs libres et intéractions
